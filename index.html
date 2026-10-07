@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026-2027 대학 입시 면접 예상문제 10선 (숙지 10분 / 답변 5분)</title>
+    <title>2026-2027 대학 입시 면접 예상문제 10선 (심층 제시문 10분 / 질문 3개)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts (Inter & Noto Sans KR) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -53,7 +53,7 @@
                 </div>
                 <div>
                     <h1 class="text-lg font-bold leading-tight text-slate-900 dark:text-white">면접 Master 10</h1>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">최신 3개년 이슈 기반 예상문제 10세트 (숙지 10분 / 답변 5분)</p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">10분 숙지용 심층 제시문 (제시문 1개 + 질문 3개 / 숙지 10분 · 답변 5분)</p>
                 </div>
             </div>
             
@@ -79,22 +79,22 @@
             <div class="bg-gradient-to-r from-brand-900 via-brand-700 to-indigo-800 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
                 <div class="relative z-10 max-w-3xl">
                     <span class="inline-block px-3 py-1 bg-brand-500/30 border border-brand-400/30 rounded-full text-xs font-semibold mb-3 tracking-wide">
-                        <i class="fa-solid fa-clock mr-1"></i> 표준 규격: 제시문 숙지 10분 | 답변 5분
+                        <i class="fa-solid fa-clock-sharp mr-1"></i> 10분 독해·분석 맞춤 실전 심층 제시문
                     </span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">2026-2027 학부 입시 면접 완벽 대비</h2>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">2026-2027 대학 입시 심층 면접 완벽 대비</h2>
                     <p class="text-slate-200 text-sm sm:text-base leading-relaxed mb-4">
-                        최근 3년 간의 기술·사회·윤리·보건 분야 핫이슈를 엄선하여 실제 대학 입시(첨단/보건계열 및 다면평가) 기출과 완벽히 동일한 문항 구조 및 난이도로 제작되었습니다.
+                        실제 주요 대학(서울대·연세대·고려대 등)의 제시문 기반 면접 규격에 맞추어 **10분 간 분석하기 적합한 분량과 다층적 쟁점을 담은 제시문 1개**와 **3단계 심층 질문**으로 완성되었습니다.
                     </p>
                     <div class="flex flex-wrap gap-4 text-xs sm:text-sm text-slate-300">
-                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 출제의도 및 해설 제공</div>
-                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 3단계 채점 기준(상/중/하)</div>
-                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 타이머 & 답변 메모장 지원</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 10분 숙지용 분량 확충 제시문</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 제시문 1개 & 질문 3개 완벽 통일</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 출제의도 및 3단계 채점기준(상/중/하)</div>
                     </div>
                 </div>
                 <i class="fa-solid fa-brain absolute -right-6 -bottom-8 text-white/10 text-9xl pointer-events-none"></i>
             </div>
 
-            <!-- Category & Search Filters -->
+            <!-- Filter Controls -->
             <div class="flex flex-col sm:flex-row gap-3 justify-between items-center bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <div class="flex items-center space-x-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0" id="filterBtnGroup">
                     <button onclick="filterCategory('all', this)" class="filter-btn active-filter px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition bg-brand-600 text-white">전체 보기 (10)</button>
@@ -108,13 +108,13 @@
                 </div>
             </div>
 
-            <!-- Problem Grid -->
+            <!-- Problem Cards Grid -->
             <div id="problemGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                <!-- Cards will be injected via Javascript -->
+                <!-- Dynamically populated -->
             </div>
         </section>
 
-        <!-- VIEW 2: Interactive Exam / Study View -->
+        <!-- VIEW 2: Interactive Exam / Practice View -->
         <section id="examView" class="hidden space-y-6">
             <!-- Navigation Back Bar -->
             <div class="flex items-center justify-between bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
@@ -123,7 +123,7 @@
                     <span>문제 목록으로 돌아가기</span>
                 </button>
                 <div id="examMetaTag" class="text-xs px-3 py-1 rounded-full font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                    Set 1 | 첨단계열 / 보건계열
+                    Set 1 | 첨단계열
                 </div>
             </div>
 
@@ -131,7 +131,7 @@
             <div class="bg-slate-900 text-white rounded-2xl p-5 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4 border border-slate-800">
                 <div class="flex items-center space-x-4">
                     <div id="timerModeBadge" class="px-3 py-1 bg-amber-500 text-slate-900 font-bold text-xs rounded-full uppercase tracking-wider">
-                        1단계: 제시문 숙지 중
+                        1단계: 제시문 숙지 중 (10분)
                     </div>
                     <div>
                         <div class="text-xs text-slate-400">남은 시간</div>
@@ -160,10 +160,11 @@
                     <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm relative">
                         <div class="border-b border-slate-200 dark:border-slate-700 pb-4 mb-6">
                             <h2 id="examTitle" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
-                                [문제 1] 인공지능 생성물의 저작권과 인간 창작성
+                                [문제 1] 제목
                             </h2>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">
-                                ※ 제시문 숙지 시간 <span class="font-bold text-amber-600 dark:text-amber-400">10분</span>, 면접 시간 <span class="font-bold text-emerald-600 dark:text-emerald-400">5분</span>입니다.
+                            <p class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-2">
+                                <span>※ 제시문 숙지 및 문제 분석: <strong class="text-amber-600 dark:text-amber-400 font-bold">10분</strong></span> | 
+                                <span>면접 답변: <strong class="text-emerald-600 dark:text-emerald-400 font-bold">5분</strong></span>
                             </p>
                         </div>
 
@@ -179,25 +180,25 @@
                     </div>
                 </div>
 
-                <!-- Right: Notes & Solution Accordion (col-span-5) -->
+                <!-- Right: Notes & Solution Panel (col-span-5) -->
                 <div class="lg:col-span-5 space-y-6">
                     <!-- Notepad Card -->
                     <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm">
                         <div class="flex items-center justify-between mb-3">
                             <h3 class="font-bold text-slate-900 dark:text-white text-sm flex items-center">
-                                <i class="fa-solid fa-pen-to-square text-brand-600 mr-2"></i> 답변 구상 메모장
+                                <i class="fa-solid fa-pen-to-square text-brand-600 mr-2"></i> 10분 구상 메모장
                             </h3>
-                            <span class="text-xs text-slate-400">실제 면접 시 서면 정리용</span>
+                            <span class="text-xs text-slate-400">제시문 구조화 & 키워드 정리</span>
                         </div>
-                        <textarea id="scratchPad" rows="10" placeholder="제시문 요약, 핵심 키워드, 답변 개요를 메모하세요..." class="w-full p-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-brand-500 custom-scrollbar resize-none"></textarea>
+                        <textarea id="scratchPad" rows="12" placeholder="제시문의 핵심 주장 및 3개 문항에 대한 답변 개요(개념, 논리구조, 대안)를 요약 작성하세요..." class="w-full p-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-brand-500 custom-scrollbar resize-none"></textarea>
                     </div>
 
                     <!-- Solution Accordion Trigger -->
                     <div class="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 rounded-2xl p-5 shadow-sm">
                         <div class="flex items-center justify-between">
                             <div>
-                                <h4 class="font-bold text-emerald-900 dark:text-emerald-200 text-sm">출제의도 및 모범답안 해설</h4>
-                                <p class="text-xs text-emerald-700 dark:text-emerald-400 mt-0.5">답변 연습 완료 후 채점 기준과 비교해보세요.</p>
+                                <h4 class="font-bold text-emerald-900 dark:text-emerald-200 text-sm">출제의도 및 3문항 모범답안</h4>
+                                <p class="text-xs text-emerald-700 dark:text-emerald-400 mt-0.5">답변 연습 완료 후 채점 기준과 비교해 보세요.</p>
                             </div>
                             <button onclick="toggleSolutionModal()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition shadow">
                                 해설 및 기준 보기
@@ -252,47 +253,43 @@
     </div>
 
     <script>
+        // Updated dataset: Exactly 1 Expanded Passage ([제시문]) suitable for 10-minute reading, and 3 Questions per Set
         const EXAM_SETS = [
             {
                 id: 1,
                 category: 'ai',
                 categoryLabel: 'AI / 첨단기술',
-                title: '[문제 1] AI 학습 데이터 저작권과 디지털 공정이용의 경계',
-                subtitle: '생성형 AI 저작권 무단 수집 vs 기술 혁신의 보상 체계',
+                title: '[문제 1] AI 학습 데이터 저작권과 인간 창작성의 미래',
+                subtitle: '생성형 AI 무단 스크래핑 논란, 공정이용 법리, 그리고 인간 고유 창작성의 철학적 존엄성',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `최근 세계적인 생성형 AI 기업인 ‘네오마인드’는 창작자 수천 명의 미술 작가와 문학가들로부터 집단 소송을 당했다. 네오마인드가 AI 모델을 학습시키는 과정에서 창작자들의 저작물을 무단으로 긁어모아(스크래핑) 학습 데이터로 사용했다는 이유다. 작가들은 "AI가 우리의 독창적인 그림체와 문체를 무료로 학습해 1초 만에 모방작을 만들어내며, 우리의 생계를 위협한다"고 주장했다. 반면 기업 측은 "공공 인터넷에 공개된 데이터를 학습에 활용하는 것은 저작권법상의 '공정이용(Fair Use)'에 해당하며, 새로운 창작 생태계를 확장하는 저작 기술 발전의 필수적 과정"이라고 반박했다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `2025년 기준 A국의 인공지능 산업 규모와 데이터 활용 실태 조사에 따르면, 전체 저작물 산업의 총 가치는 100조 원이었다. 이 중 AI 기업이 저작권자와의 정식 계약을 통해 학습 데이터를 구매한 비중은 전체 학습 데이터의 20%에 불과했다. 계약된 데이터는 전년 대비 50%의 높은 생산성 향상 및 신작 출판 증가 효과를 보인 반면, 무단 활용된 80%의 데이터 영역에서는 저작권자 수익이 전년 대비 15% 감소했다. 저작권학회 연구진은 "기술 도입의 경제적 혜택이 저작권자에게 보상되지 않고 플랫폼에만 집중될 경우, 장기적으로 인간의 창작 유인이 고갈되는 '문화적 자멸'을 초래할 수 있다"고 지적했다.`
-                    },
-                    {
-                        label: '[다]',
-                        text: `철학자 한병철은 디지털 사회에서 '정보의 과잉과 감성의 고갈'을 경고한다. 알고리즘에 의해 자동 생성되는 텍스트와 이미지들은 끊임없이 소비되지만, 그 안에는 인간 고유의 고통, 고뇌, 그리고 역사적 맥락이 부재하다. 무제한적인 기술 복제와 데이터 조합은 기존의 패턴을 신속하게 재구성할 뿐, 기존 가치관을 깨뜨리는 진정한 의미의 '본질적 독창성'을 낳지 못한다. 따라서 AI 시대의 기술적 효율성에 대항해 인간성이 지켜야 할 마지막 보루는 창작 과정에서의 고통스러운 모색과 이에 수반되는 책임의식이다.`
+                        label: '[제시문]',
+                        text: `최근 전 세계 주요 생성형 AI 개발 기업들이 소설가, 화가, 음악가 등 수만 명의 예술가 및 학술 단체들로부터 잇따라 대규모 집단 소송을 당하고 있다. 생성형 AI 모델이 인간의 지적·예술적 저작물 수억 건을 사전 동의나 정당한 대가 지불 없이 무단 수집(웹 스크래핑)하여 가공·학습했다는 점이 핵심 쟁점이다. 창작자 측은 "AI 기업들이 인간의 고통스러운 성찰과 역사적 경험이 축적된 지적 유산을 무료로 흡수하여 유사 모방작을 무제한으로 복제 및 분출하고 있다"며, 이는 소규모 창작자의 생계를 위협할 뿐만 아니라 새로운 창작에 대한 인센티브를 근본적으로 파괴하는 경제적·문화적 수탈이라고 비판한다.
+
+반면 AI 산업계 및 일부 기술 법학자들은 공개된 인터넷 공간의 빅데이터를 학습하는 과정은 저작권법상의 '공정이용(Fair Use)' 원칙에 해당한다고 맞선다. 사람이 타인의 기존 작품을 감상하고 유영하면서 영감을 얻어 새로운 학문과 예술을 발전시키는 것처럼, AI 알고리즘 역시 패턴 분석을 통한 데이터 인지 학습 과정을 거치는 것이므로 기술 혁신의 정당한 권리라는 주장이다. 이들은 AI 기술 학습을 과도하게 규제할 경우 국가 차원의 첨단 인공지능 주권 확보가 불가능해지고 기술 혁신 생태계 전체가 위축될 것이라고 주장한다.
+
+그러나 최근 인공지능 연구자들은 무단 수집에 의존한 대규모 데이터 학습의 장기적 부작용에 대한 경고를 내놓고 있다. 정당한 보상 체계 부재로 인간 창작자의 신규 데이터 생산이 저하되면, 결국 AI가 자신이 만든 데이터나 다른 AI의 합성 생성물만을 다시 학습하여 결과물의 질이 급격히 저하되는 '모델 붕괴(Model Collapse)' 현상과 '문화적 자멸'에 직면할 것이라는 지적이다. 한편, 미학 및 철학 분야에서는 알고리즘에 기반한 결과물은 아무리 화려할지라도 인간 고유의 역사적 맥락, 고뇌, 유한성에서 비롯되는 '본질적 진정성(Authenticity)'이 결여되어 있음을 강조하며, AI 시대의 인간성은 단순한 생산 효율성이 아닌 인격적 진정성에서 재정의되어야 한다고 고찰한다.`
                     }
                 ],
                 questions: [
-                    "(문제 1-1) 제시문 [가], [나], [다]를 바탕으로, AI 학습 데이터 무단 활용 문제가 지닌 경제적, 문화적, 철학적 차원의 문제점을 각각 요약하시오.",
-                    "(문제 1-2) 제시문 [나]의 데이터를 참고하여, 저작권자의 정식 승인을 받은 데이터(20%)와 무단 수집 데이터(80%) 간의 불균형이 국가 저작물 생태계 전반의 수익에 미친 영향을 분석하는 절차를 설명하시오. (단, 무단 수집으로 인한 저작권자 수익 감소 15%와 정식 계약 데이터의 50% 생산성 향상 기준 적용)",
-                    "(문제 1-3) 당신이 AI 기술을 활용하는 창작자 또는 연구자라면, 기술적 편의성을 누리는 동시에 저작권 윤리와 인간적 진정성을 지키기 위해 어떠한 실천적 태도를 취할 것인지 설명하시오."
+                    "(문제 1-1) 제시문에 등장하는 AI 학습 데이터 무단 활용에 대한 찬반 논거를 분석하고, 제시문에서 지적하는 경제적·문화적·철학적 문제점을 요약하시오.",
+                    "(문제 1-2) AI 기술 개발자가 창작자의 권리를 보장하면서도 기술 혁신의 동력을 유지할 수 있도록 하는 기술적·제도적 대책을 제시하시오.",
+                    "(문제 1-3) 지원자가 미래 첨단 기술자 또는 연구자로서 AI가 가져다주는 생산적 편의를 누리는 동시에 인간 창작의 진정성을 지키기 위해 어떠한 윤리적 자세와 실천 원칙을 가질 것인지 설명하시오."
                 ],
-                intent: "생성형 AI 발전 속에서 발생하는 저작권 conflict, 데이터 공정이용 논란, 경제적 불평등 및 창작의 진정성 이슈를 다층적으로 분석할 수 있는 사고력을 평가함.",
+                intent: "생성형 AI 발전 속 저작권 충돌, 경제적 불평등, 그리고 인간 창작성의 철학적 의미를 다각도로 이해하고 비판적·상보적 대안을 제시할 수 있는지 평가함.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 1-1)</strong> <br>
-                        - 경제적 차원: 저작권자의 정당한 보상 없는 무단 학습으로 창작자의 수익 감소 및 생계 위협.<br>
-                        - 문화적 차원: 플랫폼 독점 및 보상 부재로 인간의 창작 유인 고갈('문화적 자멸').<br>
-                        - 철학적 차원: 알고리즘 조합은 고뇌와 고통이 결여되어 진정한 독창성과 의미를 창출하지 못함.</p>
+                        - 찬성(기업): 인터넷 공개 데이터 학습은 공정이용 범주이며 기술 혁신과 국가 AI 주권 확보에 필수적임.<br>
+                        - 반대(창작자): 사전 동의 없는 무단 수집은 지적 재산권 침해이며 창작 유인을 위협함.<br>
+                        - 문제점: (경제적) 창작자 보상 부재 및 생계 위협 / (문화적) 신규 인간 데이터 고갈에 따른 '모델 붕괴' 및 문화 자멸 / (철학적) 알고리즘 생성물의 맥락·고뇌 결여 및 인간 진정성의 상실.</p>
                         <p><strong>(문제 1-2)</strong> <br>
-                        - 수리적 접근: 기존 100조 원 중 정식 승인 영역(20조 원)은 50% 증가하여 30조 원이 됨 (10조 원 증가).<br>
-                        - 무단 수집 영역(80조 원)은 15% 감소하여 68조 원이 됨 (12조 원 감소).<br>
-                        - 전체 결과: 총 저작물 산업 시장 가치는 100조 원에서 98조 원으로 총 2조 원(2%) 순감소함. 이는 무단 수집으로 인한 피해가 정식 계약의 생산성 향상 효과를 상쇄했음을 수리적으로 증명함.</p>
+                        - 기술적: Opt-out(데이터 학습 거부) 표준 프로토콜 적용 및 불가시성 워터마크 기술 도입.<br>
+                        - 제도적: AI 데이터 전용 공익 기금 신설, 출처 표기 의무화 및 'AI 라이선싱 기구' 구축.</p>
                         <p><strong>(문제 1-3)</strong> <br>
-                        - 윤리적 책임: AI 활용 시 출처 명시, 학습 데이터의 투명성 확보.<br>
-                        - 창의적 태도: AI를 단순 완성 도구가 아닌 아이디어 확장 도구로 활용하며, 인간 고유의 감정과 경험적 가치관을 최종 합성 및 해석 과정에 투입함.</p>
+                        - AI를 결과물 완전 대체용이 아닌 아이디어 확장 보조 도구로 활용.<br>
+                        - 인간 고유의 비판적 문제의식, 윤리적 책임감 및 역사적 맥락 검토 과정을 최종 단계에 투입하는 주체적·상보적 윤리관 견지.</p>
                     </div>
                 `,
                 rubric: `
@@ -300,15 +297,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상 (Excellent):</span> 
-                            세 제시문의 경제·문화·철학적 논지를 정확히 구분하여 요약하고, 수리적 수치 계산(2조 원 감소)을 완벽히 제시하며, AI와의 공존에 대한 상보적·윤리적 태도를 균형 있게 제시함.
+                            제시문의 3가지 차원(경제·문화·철학)을 정밀히 도출하고, 공정이용 이슈와 모델 붕괴 메커니즘을 명확히 이해하며, 현실적 대안과 주체적 창작관을 입체적으로 제시함.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중 (Average):</span> 
-                            제시문 요약은 우수하나 수리 계산 절차에서 일부 수치를 누락하거나, 윤리적 태도 설명이 단선적(AI 전면 배제 또는 무조건적 활용)임.
+                            제시문 요약은 적절하나 해결책 및 주체적 태도가 단선적이며 일반적인 AI 찬반론 논의에 머무름.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하 (Below Average):</span> 
-                            제시문 내용을 단편적으로 나열하는 데 그치고, 수리적 분석을 수행하지 못함.
+                            3개 질문 구분을 하지 못하거나 단순 저작권 침해 주장만을 반복함.
                         </div>
                     </div>
                 `
@@ -317,35 +314,36 @@
                 id: 2,
                 category: 'health',
                 categoryLabel: '보건 / 의료 / 바이오',
-                title: '[문제 2] 의료 AI 진단 알고리즘과 과실 책임 및 보건 형평성',
-                subtitle: 'AI 진단 오진 시 책임 소재 + 지역·소득별 의료 리터러시 격차',
+                title: '[문제 2] 의료 AI 진단 오진 책임과 보건 의료 격차',
+                subtitle: '의료 AI 소프트웨어 도입, 오진 시 법적·윤리적 책임 주체, 그리고 디지털 보건 양극화',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `최근 AI 영상 진단 보조 소프트웨어 ‘닥터알파’가 대학병원 및 1차 의원에 급속도로 보급되었다. 닥터알파의 흉부 X-ray 뇌졸중 및 암 진단 정확도는 95%로, 숙련된 전문의 평균(91%)을 상회한다. 그러나 최근 닥터알파가 악성 종양을 정상 소견으로 판독하여 환자의 치료 골든타임을 놓치는 오진 사고가 발생했다. 해당 의사는 "AI 시스템의 판독 결과가 99% 확신도로 제시되었기 때문에 이를 신뢰할 수밖에 없었다"고 주장한 반면, 개발사는 "AI는 진단 보조 도구일 뿐 최종 책임은 의사에게 있다"고 맞서고 있다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `2024년 전국 보건소 및 병원 이용자 5,000명을 대상으로 한 디지털 헬스 리터러시(Digital Health Literacy) 조사에 따르면, 고연령층 및 저소득층의 AI 기반 스마트 예약 및 디지털 건강정보 검증 능력이 현저히 떨어지는 것으로 나타났다. 전체 응답자의 디지털 헬스 리터러시 충족률은 58%였으나, 70대 이상은 28.5%, 소득 하위 20% 계층은 34.2%에 불과했다. 반면 20~30대 대도시 거주자의 충족률은 82.1%에 달해, 디지털 기술 도입이 오히려 상급 의료 서비스 접근성의 양극화를 심화시키고 있다는 지적이 제기된다.`
+                        label: '[제시문]',
+                        text: `최근 흉부 X-ray, CT 및 뇌졸중 영상 판독 분야에서 정확도 95% 이상을 자랑하는 AI 진단 보조 소프트웨어가 대학병원을 넘어 1·2차 지역 의료기관까지 광범위하게 도입되고 있다. 인력난에 시달리는 의료 현장에서 AI는 진단 속도를 획기적으로 줄이고 의료진의 업무 부담을 완화해 주는 혁신적 솔루션으로 각광받고 있다. 그러나 최근 AI 소프트웨어가 악성 종양을 정상 소견으로 오진하여 환자의 초기 치료 골든타임을 놓치는 중대한 의료 사고가 발생하면서 거센 사회적 논란이 불거졌다.
+
+사고 발생 후 책임 소재를 두고 대립이 가열되고 있다. 담당 의사는 "해당 AI 소프트웨어의 신뢰도가 99%에 달한다고 홍보되었으며, 시스템이 정상 소견을 확정적으로 제시했기 때문에 의사 개인으로서 이상 징후를 재검증하기 어려웠다"고 주장한다. 반면 AI 개발사는 "자사의 제품은 인허가 단계부터 '의사의 진단을 보조하는 도구'로 승인받았으며, 최종 진단 결정과 임상적 판단의 법적 책임은 전적으로 의료진에게 있다"고 면책을 주장하고 있다. 법률 전문가들 역시 AI 알고리즘의 블랙박스(Black box) 특성으로 인해 소프트웨어의 기술적 결함인지 의사의 과실인지를 명확히 입증하기 어렵다고 지적한다.
+
+한편, 디지털 헬스케어 기술의 급속한 확산은 의료 서비스 접근성의 새로운 불평등을 야기하고 있다. 고령층, 장애인, 저소득층 등 취약계층의 디지털 헬스 리터러시(Digital Health Literacy) 충족률은 30% 미만에 불과하다. 이로 인해 앱 기반 스마트 예약, 원격 모니터링, AI 맞춤형 헬스케어 서비스를 적극 활용하는 계층은 건강 관리 효율성을 증대시키는 반면, 디지털 기기 활용이 서툰 계층은 상급 병원 접근에서 차단되고 조기 진단 기회를 놓치는 등 '디지털 보건 양극화'가 실질적인 건강 수명 격차로 고착화되고 있다.`
                     }
                 ],
                 questions: [
-                    "(문제 2-1) 제시문 [가]에 나타난 AI 의료 진단 오진 사례에서 법적·윤리적 책임 소재가 명확히 정리되지 않을 때 발생할 수 있는 사회적 문제점 두 가지를 제시하시오.",
-                    "(문제 2-2) 제시문 [나]의 조사 결과를 바탕으로, 고령층 및 저소득층의 디지털 헬스 리터러시 하락이 취약계층의 실질 건강에 미치는 악영향을 설명하시오.",
-                    "(문제 2-3) 제시문 [가]와 [나]를 종합하여, 의료 분야에 AI 기술을 확대 적용할 때 환자의 안전권과 의료 형평성을 동시에 확보하기 위한 개인적, 제도적 해결책을 논하시오."
+                    "(문제 2-1) 제시문에 나타난 의료 AI 오진 사고에서 법적·윤리적 책임 소재가 명확하지 않을 때 발생할 수 있는 사회적 문제점을 설명하시오.",
+                    "(문제 2-2) 디지털 헬스케어 기술의 발전이 특정 계층의 '건강 수명 격차'로 이어지는 구조적 원인을 제시문에 근거하여 논하시오.",
+                    "(문제 2-3) 지원자가 미래 보건·의료 전문가 또는 기술자로서 의료 AI의 안전한 정착을 도모하면서 동시에 모든 국민의 의료 접근성을 보장하기 위해 도입해야 할 대안을 제시하시오."
                 ],
-                intent: "첨단 의료 AI 도입에 따른 윤리적/법적 책임 분담과 디지털 격차로 인한 보건 불평등 문제를 다각도로 조명하고 현실적 대안을 도출할 수 있는지 평가.",
+                intent: "첨단 의료 AI 도입에 따른 과실 책임 분담 문제와 디지털 격차에 의한 보건 불평등 구조를 통섭적으로 분석할 능력을 평가함.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 2-1)</strong> <br>
-                        1) 의사의 소극적 진료 및 AI 과잉 의존 현상 발생 (책임 회피를 위해 판단을 보류하거나 책임 전가).<br>
-                        2) 환자의 의료진 및 첨단 의료 기술에 대한 신뢰성 붕괴, 의료 분쟁 소송 비용 급증.</p>
+                        - 의료진의 방어 진료 심화 및 AI 판독 결과에 대한 지나친 의존 또는 불신 등 혼란 발생.<br>
+                        - 오진 피해 환자에 대한 정당한 보상 지연, 첨단 의료 기술 전체에 대한 사회적 신뢰 저하.</p>
                         <p><strong>(문제 2-2)</strong> <br>
-                        디지털 헬스 리터러시 부족은 잘못된 건강정보 수용, 온라인 예약 실패로 인한 상급 병원 이용 기회 상실, 질병의 조기 발견 지연 등으로 이어져 보건 불평등 및 건강 수명 격차를 더욱 심화시킴.</p>
+                        - 디지털 헬스 리터러시 격차가 예약·원격 모니터링·AI 조기 진단 접근성 차이로 이어짐.<br>
+                        - 취약계층의 정보 차단이 치료 골든타임 상실 및 건강 양극화로 고착화되는 구조적 불평등.</p>
                         <p><strong>(문제 2-3)</strong> <br>
-                        - 개인적 측면: 의료 정보 및 AI 결과에 대한 비판적 이해력(리터러시) 강화, 맹목적 과의존 지양.<br>
-                        - 제도적 측면: 의료 AI 책임 배분 법안 수립(설명가능한 AI 의무화), 취약계층 대상 디지털 보건소 동행 서비스 및 리터러시 교육 보급.</p>
+                        - 책임성: 설명 가능한 AI(XAI) 도입 의무화, AI 의료 사고 전담 국가 배상 책임 보험 제도 마련.<br>
+                        - 접근성: 보건소 중심 디지털 가상 동행 서비스, 취약계층 대상 디지털 헬스케어 맞춤 교육 및 공공 의료 디지털 인프라 확충.</p>
                     </div>
                 `,
                 rubric: `
@@ -353,15 +351,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상:</span> 
-                            의료 AI 오진의 책임 소재 복잡성을 정확히 파악하고, 통계 자료 분석을 통해 보건 불평등의 고리를 논리적으로 연결하며, 실효성 있는 개인/제도적 대안을 제시함.
+                            의료 AI 오진의 책임 불확실성(블랙박스 문제)을 깊이 이해하고, 디지털 리터러시와 건강권 간의 인과관계를 입체적으로 입증하며, 현실적인 정책적·기술적 대책을 도출함.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중:</span> 
-                            책임 소재와 보건 불평등 문제를 개별적으로 설명했으나 두 제시문 간의 통섭적 연계가 부족함.
+                            책임 문제나 디지털 격차 중 어느 한쪽 측면에 편중하여 답변하거나 원론적인 대안만 나열함.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하:</span> 
-                            단순히 AI 오진의 위험성만 언급하거나 취약계층 지원이 필요하다는 수준의 상투적 답변에 그침.
+                            제시문 단어 재조합 수준에 머무르며 3개 문항에 대한 구체적 논리를 구성하지 못함.
                         </div>
                     </div>
                 `
@@ -370,33 +368,36 @@
                 id: 3,
                 category: 'society',
                 categoryLabel: '사회 / 데이터 / 윤리',
-                title: '[문제 3] 딥페이크(Deepfake) 기술 악용과 표현의 자유의 경계',
-                subtitle: '디지털 성범죄 및 여론 조작 방지 vs 과도한 표현의 자유 침해 논란',
+                title: '[문제 3] 딥페이크(Deepfake) 기술 규제와 표현의 자유',
+                subtitle: '디지털 성범죄·여론 조작 방지용 전면 규제 vs 창작·표현의 자유 침해 및 기술 중립성 논란',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `최근 딥페이크(Deepfake) 음성 및 영상 생성 기술이 정교해짐에 따라 일반인, 청소년, 유명인을 대상으로 한 디지털 성범죄 및 금융 사기(보이스피싱) 범죄가 급증했다. 방송통신심의위원회 통계에 따르면 2024년 딥페이크 관련 불법 영상물 삭제·차단 요구 건수는 전년 대비 300% 이상 증가한 2만 1,000건을 기록했다. 피해자의 정신적 타격과 인격권 침해가 심각해지자, 국회는 딥페이크 영상 제작 및 소지자 처벌을 대폭 강화하는 강력한 규제 법안을 가결했다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `한편, 미국의 한 표현의 자유 옹호 단체는 딥페이크 기술 자체를 금지하거나 워터마크 표시를 의무화하는 법안이 정치적 풍자, 영화 특수효과, 예술 창작의 자유를 위축시킬 수 있다고 경고했다. 과거 카메라나 인쇄술이 등장했을 때도 악용 위험이 제기되었지만, 도구 자체를 규제하기보다 불법적 행위만을 표적 규제하는 방향으로 발전해 왔다. "기술은 가치중립적이며, 사전 검열 방식의 엄격한 규제는 기술 혁신과 자율적 자정 작용을 억압할 수 있다"는 입장이 맞서고 있다.`
+                        label: '[제시문]',
+                        text: `최근 생성형 인공지능 기반의 딥페이크(Deepfake) 영상·음성 합성 기술이 극도로 고도화되면서, 일반인 및 청소년을 대상으로 한 디지털 성범죄 합성물과 선거철 정치인 모작을 통한 여론 조작 범죄가 사회적 재앙 수준으로 확산하고 있다. 타인의 신체나 음성을 동의 없이 정교하게 합성하여 유포하는 행위는 피해자의 인격권을 참혹하게 짓밟고, 사회적 사실 검증 체계를 마비시켜 민주적 공론장의 신뢰성을 흔들고 있다. 이에 국회와 사법당국은 딥페이크 생성 도구 자체의 보급을 금지하거나, 단순 소지 및 시청자까지 강력하게 형사 처벌하는 강경 법안을 잇따라 가결했다.
+
+그러나 표현의 자유를 옹호하는 시민단체들과 IT 학계는 이러한 사전 검열성 엄격 규제가 초래할 과잉 처벌과 부작용에 대해 강력한 우려를 표명하고 있다. 딥페이크 기술은 영화 특수효과(VFX), 대중문화 풍자, 사망한 예술가의 복원, 교육용 가상 시뮬레이션 등 다양한 긍정적 산업·예술 분야에서 핵심 도구로 활용되고 있다. 사전 검열 수준의 기술 통제는 예술가들의 창작 의욕을 꺾고 기술 스타트업의 혁신을 위축시켜 미래 산업 경쟁력을 떨어뜨릴 수 있다는 지적이다.
+
+역사학자들은 과거 인쇄술, 카메라, 인터넷이 처음 등장했을 때도 악용 위험에 대한 공포로 전면 금지 논의가 있었으나, 인류는 도구 자체를 억압하기보다 '불법적 악용 행위자'만을 표적 규제하는 방식으로 민주주의와 기술 발전을 조화시켜 왔음을 강조한다. 결국 딥페이크 기술 자체를 불법화할 것인가, 아니면 기술 중립성을 인정하되 사후 처벌과 기술적 검증 장치를 강화할 것인가를 두고 사회적 갈등이 심화되고 있다.`
                     }
                 ],
                 questions: [
-                    "(문제 3-1) 제시문 [가]와 [나]의 핵심 입장을 비교하고, 딥페이크 기술 규제를 둘러싼 주요 가치(인격권 보호 vs 표현의 자유 및 기술 혁신)의 충돌 지점을 설명하시오.",
-                    "(문제 3-2) 딥페이크 범죄 피해를 최소화하면서도 예술적·기술적 창의성을 저해하지 않기 위해 사회적·기술적으로 마련할 수 있는 중용적 방안을 제시하시오."
+                    "(문제 3-1) 제시문에 나타난 딥페이크 규제론(인격권 보호 및 사회 안전)과 기술 중립론(표현의 자유 및 산업 혁신)의 가치 충돌을 요약하시오.",
+                    "(문제 3-2) 사전 검열 방식의 기술 전면 규제가 지닌 한계를 지적하고, 이를 극복할 수 있는 기술적·제도적 중용안을 제시하시오.",
+                    "(문제 3-3) 고도화된 딥페이크 미디어 환경 속에서 시민들이 갖추어야 할 비판적 디지털 미디어 리터러시 역량과 태도에 대해 논하시오."
                 ],
-                intent: "딥페이크 기술의 긍정적/부정적 파급력을 이해하고, 디지털 윤리와 표현의 자유 사이의 상충 가치를 비판적으로 조율할 수 있는 능력을 평가함.",
+                intent: "첨단 딥페이크 기술의 사회적 위협과 표현의 자유 간 상충 관계를 정밀하게 파악하고 절충안 및 미디어 윤리를 도출할 수 있는지 평가함.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 3-1)</strong> <br>
-                        - [가] 입장: 딥페이크 악용으로 인한 피해자의 인격권 및 안전권 보호가 최우선이며, 엄격한 법적 처벌과 사전 차단 필요.<br>
-                        - [나] 입장: 기술 도구 자체에 대한 과도한 규제는 정치 풍자, 예술, IT 기술 발전 등 표현의 자유를 위축시키므로 불법 행위자 중심의 사후 처벌이 바람직함.<br>
-                        - 충돌 지점: 피해자의 인격권 및 안전 확보라는 사회적 기본권과 창작의 자유 및 미래 기술 혁신 간의 경계선 설정 문제.</p>
+                        - 규제론: 인격권 침해, 디지털 성범죄, 민주적 공론장 붕괴 방지를 위해 도구 및 제작자 강력 규제 필요.<br>
+                        - 기술 중립론: 사전 검열은 예술적 풍자, 영화 VFX, 기술 혁신을 위축시키므로 도구가 아닌 악용 행위자만 처벌해야 함.</p>
                         <p><strong>(문제 3-2)</strong> <br>
-                        - 기술적 방안: 생성 시 불가시성 AI 워터마크(C2PA 표준) 삽입 의무화 및 원본 탐지 알고리즘 기술 개발 투자.<br>
-                        - 제도적/교육적 방안: 제작 도구 자체가 아닌 '비동의 유포 및 악의적 사용'에 한정한 표적 처벌 강화, 청소년 대상 디지털 미디어 윤리 교육 활성화.</p>
+                        - 한계: 합법적 창작 위축, 기술 발전 저해, 과잉 처벌 위험.<br>
+                        - 대안: (기술적) AI 워터마크(C2PA 표준) 자동 삽입 의무화 및 원본 탐지 기술 개발 / (제도적) 비동의 합성 유포자에 대한 표적 처벌 강화 및 합법 창작 예외 조항 명시.</p>
+                        <p><strong>(문제 3-3)</strong> <br>
+                        - 교차 검증: 자극적 영상 수용 시 공식 출처 및 타 매체 보도를 교차 확인하는 팩트체크 습관화.<br>
+                        - 윤리적 소비: 타인의 비동의 합성물에 대한 즉각적인 공유 중단, 신고 실천 및 디지털 인격권 존중 태도 견지.</p>
                     </div>
                 `,
                 rubric: `
@@ -404,15 +405,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상:</span> 
-                            인격권과 표현의 자유라는 철학적 가치를 명확히 대조하고, 기술적 대응(워터마크)과 제도적 대응(표적 규제)을 균형 있게 통합 제시함.
+                            기본권 대립 구도를 정밀히 분석하고, 기술적 워터마크와 표적 처벌 등 구체적 절충안을 제시하며, 미디어 비판 의식을 주체적으로 논술함.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중:</span> 
-                            제시문 요약은 우수하나, 해결책이 단순히 "강력한 처벌"이나 "기술 개발" 등 한쪽으로 치우침.
+                            가치 충돌 분석은 양호하나 해결책이 단순히 무조건적 처벌 강화나 무규제 주장으로 한쪽으로 치우침.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하:</span> 
-                            제시문의 핵심 갈등 구조를 제대로 파악하지 못함.
+                            질문 논지를 파악하지 못하고 일방적인 감정적 주장만 반복함.
                         </div>
                     </div>
                 `
@@ -421,32 +422,36 @@
                 id: 4,
                 category: 'ai',
                 categoryLabel: 'AI / 첨단기술',
-                title: '[문제 4] AI 일자리 대체와 보편적 기본소득(UBI) 도입 논의',
-                subtitle: '사무·전문직 자동화와 노동 가치의 변화',
+                title: '[문제 4] AI 노동 대체와 보편적 기본소득(UBI) 도입',
+                subtitle: '지식 전문직 노동 자동화, AI 로봇세 부과, 그리고 인간 노동 존엄성의 재정의',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `국제통화기금(IMF)의 2024년 보고서에 따르면, 생성형 AI의 확산으로 전 세계 일자리의 약 40%가 직간접적인 영향권에 들 것으로 예측되었다. 특히 과거 산업혁명과 달리 단순 노무직보다 선진국의 고학력 전문직(금융, 법률, 번역, 소프트웨어 개발)의 일자리 대체 위험도가 더 높게 나타났다. AI 도입 기업의 생산성은 평균 30% 증가했으나, 신규 채용 감소 및 노동소득 분배율 하락으로 고용 불안정성이 가중되고 있다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `기후학자이자 경제학자인 필립스는 노동이 인간에게 단순한 생계수단을 넘어 '자아실현과 사회적 존엄성'을 제공한다고 말한다. 기술 혁신으로 발생한 부를 재분배하기 위해 'AI 로봇세'를 신설하고 모든 국민에게 '보편적 기본소득(UBI)'을 지급하자는 주장이 힘을 얻고 있다. 그러나 일부 비판자들은 일하지 않고 얻는 소득이 인간의 노동 의욕과 삶의 목적의식을 저해하고, 국가 재정 건전성을 악화시킬 것이라고 경고한다.`
+                        label: '[제시문]',
+                        text: `생성형 인공지능과 자율 로봇 기술의 파죽지세 성장에 따라 전 세계 일자리의 약 40% 이상이 직간접적인 자동화 영향권에 들어설 것이라는 국제기구들의 전망이 잇따르고 있다. 주목할 점은 과거 산업혁명이 육체 노동 중심의 단순 노무직을 기계화했던 것과 달리, AI 혁명은 소프트웨어 개발, 법률 문서 작성, 금융 분석, 의료 진단, 번역 등 고학력 전문 지식 노동 시장을 우선적으로 대체하고 있다는 사실이다. 기술 도입으로 기업의 생산성은 사상 최고치를 경행하고 있지만, 노동소득 분배율은 지속적으로 하락하며 구조적 고용 불안과 양극화가 가중되고 있다.
+
+이처럼 기술 자본을 보유한 극소수 기업과 개인이 부를 독점하고 대다수 노동자가 소득원을 상실하는 위기를 극복하기 위해, AI 기술에 소득세를 비유한 'AI 로봇세(Robot Tax)'를 신설하고 이를 재원으로 전 국민에게 조건 없이 일정 소득을 지급하는 '보편적 기본소득(UBI; Universal Basic Income)' 제도를 도입하자는 주장이 세계적 화두로 떠올랐다. UBI 찬성론자들은 이 제도가 기술 실업 시대의 사회적 안전망이 될 뿐만 아니라, 빈곤율을 낮추고 시민들에게 자율적인 삶과 재교육의 기회를 제공할 것이라고 강조한다.
+
+반면, 경제학자들과 재정 정책 전문가들은 UBI의 실현 가능성에 강한 의문을 제기한다. 막대한 재정 소요로 인한 조세 부담 증가는 기업의 기술 투자와 국가 성장 동력을 위축시킬 수 있다는 이유다. 또한 조건 없는 소득 지급이 인간의 근로 의욕을 저하시키고 사회적 역동성을 해칠 수 있다고 지적한다. 더 나아가 노동이 단순한 생계 수단을 넘어 인간에게 자아실현, 공동체적 소속감, 존재 가치를 제공해 왔다는 점을 고려할 때, 기본소득 지급만으로 노동 상실이 가져올 인간의 정서적·존재론적 아노미(Anomie)를 해결할 수 없다는 철학적 반론이 거세다.`
                     }
                 ],
                 questions: [
-                    "(문제 4-1) 제시문 [가]에 제시된 생성형 AI 시대 노동 시장 변화의 특성을 기존 산업혁명 시기와 비교하여 설명하시오.",
-                    "(문제 4-2) 제시문 [나]의 로봇세 도입 및 기본소득 지급 주장에 대한 찬성과 반대 논거를 각각 제시하고, AI 시대에 인간이 노동의 존엄성을 유지할 수 있는 방안을 논하시오."
+                    "(문제 4-1) 제시문에서 설명하는 AI 노동 대체가 과거 산업혁명과 비교하여 지니는 차별적 특성과 이로 인한 사회·경제적 파급효과를 요약하시오.",
+                    "(문제 4-2) 'AI 로봇세'를 통한 '보편적 기본소득(UBI)' 도입 주장에 대한 찬성과 반대의 핵심 논거를 각각 제시하시오.",
+                    "(문제 4-3) AI가 상당수 전문 직무를 자동화하는 미래 사회에서, 인간이 소득 보장 차원을 넘어 '노동의 존엄성'과 삶의 의미를 유지할 수 있는 방안을 논하시오."
                 ],
-                intent: "AI 기술 혁명이 미래 노동 시장 및 사회 안전망에 미치는 영향을 파악하고, 기술적 부의 재분배와 인간 존엄성 보장 방안을 다각도로 평가함.",
+                intent: "AI 기술에 의한 노동 시장의 구조 개편, 재분배 정책(로봇세/UBI)의 함의, 노동에 대한 철학적 존엄성을 종합적으로 고찰하는 능력을 평가함.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 4-1)</strong> <br>
-                        기존 산업혁명은 육체 노동 중심의 단순 노무직을 기계화했으나, 생성형 AI는 지식 노동 중심의 고학력 전문직(소프트웨어, 법률, 금융 등)을 직접 대체 및 보완한다는 점에서 차이가 있음.</p>
+                        - 과거: 육체 노동 및 단순 노무직 중심 기계화.<br>
+                        - AI 혁명: 고학력 전문 지식 노동(법률, 코드, 금융, 의료)을 직접 자동화하며, 생산성 급증 대비 노동소득 분배율 하락 및 극심한 소득 양극화를 초래함.</p>
                         <p><strong>(문제 4-2)</strong> <br>
-                        - 기본소득 찬성: AI 자동화로 인한 극심한 양극화 완화, 최소한의 인간다운 삶과 생계 안정성 보장.<br>
-                        - 기본소득 반대: 노동 유인 감소, 국가 재정 악화, 노동을 통한 자아실현 및 공동체 의식 약화.<br>
-                        - 존엄성 유지 방안: AI가 대체할 수 없는 정서적 교감, 창의적 질문 던지기, 사회적 돌봄 노동의 가치를 재정립하고 인간 고유의 역할으로의 직업 재교육 추진.</p>
+                        - 찬성: 기술 실업 안전망 구축, AI 부의 사회적 재분배, 빈곤 퇴치 및 재교육 기회 제공.<br>
+                        - 반대: 막대한 재정 부담, 기업 투자 위축, 근로 의욕 저하 및 사회적 역동성 상실 위험.</p>
+                        <p><strong>(문제 4-3)</strong> <br>
+                        - 경제적 생산성 중심의 노동관에서 벗어나 돌봄, 사회적 봉사, 예술, 공동체 기여 등 인간 고유의 가치 노동을 재평가함.<br>
+                        - 평생 교육 인프라를 구축하여 AI와의 협업적 창의성을 개발하고 자아실현의 기회를 다변화함.</p>
                     </div>
                 `,
                 rubric: `
@@ -454,15 +459,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상:</span> 
-                            지식 노동 대체의 특성을 명확히 비교하고, 기본소득의 재정적·철학적 함의를 정확히 파악하여 노동의 재정의를 논리적으로 도출함.
+                            지식 노동 자동화의 특성을 정밀하게 파악하고 UBI 찬반 논거를 명확히 제시하며, 경제적 가치를 넘어서는 노동 존엄성의 신개념을 체계적으로 이끌어냄.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중:</span> 
-                            AI 일자리 특성을 언급했으나 기본소득 찬반 논거가 상투적임.
+                            일자리 대체 현상과 UBI 개념은 잘 설명했으나, 노동 존엄성 및 삶의 의미 재정의에 대한 철학적 고민이 부족함.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하:</span> 
-                            제시문 이해 부족으로 일자리 감소에 대한 공포만 나열함.
+                            제시문 요약 수준에 머물며 문제의 핵심 쟁점에 대한 자체 논거 제시 실패.
                         </div>
                     </div>
                 `
@@ -471,32 +476,35 @@
                 id: 5,
                 category: 'society',
                 categoryLabel: '사회 / 데이터 / 윤리',
-                title: '[문제 5] 기후위기 대응과 탄소중립 기술(CCUS)의 사회적 형평성',
-                subtitle: '탄소 배출권 거래제와 선진국·개도국 간 기후 정의(Climate Justice)',
+                title: '[문제 5] 기후위기 대응 기술(CCUS)과 기후 정의(Climate Justice)',
+                subtitle: '탄소 포집 기술(CCUS)과 탄소 무역 장벽, 선진국-개도국 간 기후 불평등 및 윤리적 책임',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `글로벌 기후위기가 심화됨에 따라 세계각국은 2050 탄소중립을 달성하기 위해 '탄소포집·활용·저장 기술(CCUS)' 및 재생에너지 전환에 대규모 예산을 투입하고 있다. 2024년 기준 글로벌 탄소 배출권 거래 시장 규모는 전년 대비 25% 성장했다. 그러나 고도의 CCUS 기술 설치 비용이 막대하여, 기술력을 보유한 선진국 대기업들은 탄소 배출 감축 목표를 달성하는 반면, 재정이 부족한 개발도상국과 중소기업들은 기후 국경세(CBAM) 부과로 인해 글로벌 공급망에서 배제될 위기에 처했다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `기후 정의(Climate Justice) 운동가들은 "역사적으로 지구 온난화의 원인인 탄소를 가장 많이 배출한 국가들은 선진국임에도 불구하고, 기후변화로 인한 가뭄과 폭염, 경제적 피해는 개발도상국에 집중되고 있다"고 지적한다. 첨단 기후 기술이 선진국의 새로운 경제적 장벽이 되어서는 안 되며, 기술 이전과 '손실과 피해 기금'의 공정한 집행이 동반되어야 진정한 탄소중립이 가능하다는 주장이다.`
+                        label: '[제시문]',
+                        text: `글로벌 기후위기가 인류의 생존을 위협함에 따라 세계 각국은 2050 탄소중립 달성을 위해 재생에너지 전환과 더불어 대기 중 탄소를 직접 포집·활용·저장하는 '탄소포집기술(CCUS; Carbon Capture, Utilization, and Storage)'에 천문학적인 자금을 투입하고 있다. 첨단 CCUS 기술은 기존 산업 구조를 급격히 바꾸지 않고도 온실가스를 직접 줄일 수 있는 '기후위기 극복의 게임 체인저'로 각광받고 있다. 
+
+그러나 고도의 CCUS 인프라를 구축하고 운용하는 데에는 막대한 자본과 최첨단 공학 기술이 필수적이다. 이로 인해 거대 자본과 기술력을 독점한 선진국 및 다국적 기업들은 탄소 감축 목표를 용이하게 달성하고 시장 우위를 점하는 반면, 재정과 기술 기반이 열악한 개발도상국과 중소기업들은 기후국경조정제도(CBAM)와 같은 선진국의 탄소 무역 장벽으로 인해 글로벌 공급망에서 배제되고 심각한 경제적 타격을 입고 있다.
+
+환경 윤리학자들과 기후 정의(Climate Justice) 운동가들은 이러한 현실이 심각한 불평등을 야기한다고 지적한다. 역사적으로 지구 온난화를 유발한 산업화 탄소 배출의 대부분은 선진국이 책임져야 함에도 불구하고, 기후변화로 인한 해수면 상승, 가뭄, 기근 등 재앙적 피해는 대처 능력이 부족한 개발도상국에 집중되고 있다. 이들은 기술적 솔루션이 기후위기를 해결하는 전능한 도구가 될 수 없음을 경고하며, 기술 독점이 새로운 형태의 '기후 자본주의'와 불평등을 고착화하지 않으려면 역사적 책임에 기반한 기후 정의가 우선되어야 한다고 강조한다.`
                     }
                 ],
                 questions: [
-                    "(문제 5-1) 제시문 [가]와 [나]를 참고하여, 기술 중심의 탄소중립 정책이 지닌 한계와 '기후 불평등'이 발생하는 구조적 원인을 설명하시오.",
-                    "(문제 5-2) 친환경 기술 혁신을 촉진하면서도 개발도상국 및 소외 계층과의 '기후 정의'를 실현할 수 있는 국제적 협력 방안을 제시하시오."
+                    "(문제 5-1) 제시문에 제시된 기술 중심의 탄소중립 정책(CCUS)이 국제 사회에서 '기후 불평등'을 초래하는 구조적 원인을 설명하시오.",
+                    "(문제 5-2) 선진국의 친환경 기술 독점을 완화하고 개발도상국과의 '기후 정의'를 실현하기 위한 국제적 공조 대책을 제시하시오.",
+                    "(문제 5-3) 기후위기 극복을 위해 첨단 기술 개발(공학적 대안)과 개인의 소비 및 라이프스타일 전환(윤리적 실천) 중 어느 것이 더 근본적인 해결책인지 지원자의 견해를 논하시오."
                 ],
-                intent: "탄소중립 기술 및 기후 경제 정책이 초래할 수 있는 국제적/사회적 불평등 구조를 파악하고 기후 정의와 기술 윤리를 종합적으로 사고하는지 평가.",
+                intent: "탄소중립 기술 발전 이면의 국제적 불평등 구조를 파악하고 기후 정의와 개인적/제도적 실천관을 정립하고 있는지 평가함.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 5-1)</strong> <br>
-                        - 기술 중심 정책 한계: 높은 초기 비용으로 인해 기술 소유 여부에 따른 새로운 경제적 격차(기후 격차) 발생.<br>
-                        - 불평등 원인: 역사적 탄소 배출 책임이 큰 선진국이 기술과 자본을 독점하고 기후 무역 장벽(CBAM)을 세우는 반면, 피해는 개도국에 집중됨.</p>
+                        - 기술·자본을 독점한 선진국은 CCUS를 활용해 무역 장벽(CBAM)을 세우고 이익을 극대화함.<br>
+                        - 역사적 배출 책임이 적은 개도국은 재정·기술 부재로 기후 재난 피해를 집중 수용하고 무역에서 배제되는 구조적 불평등.</p>
                         <p><strong>(문제 5-2)</strong> <br>
-                        - 국제 기술 공공재화: 공공 자금으로 개발된 친환경·CCUS 핵심 기술의 개도국 무상/저리 이전 공조.<br>
-                        - 기후 기금 실효성 확보: 선진국의 손실과 피해 기금 출연 의무화 및 탄소배출권 수익의 일정 비율을 개도국 기후 적응 인프라 구축에 재투자.</p>
+                        - 공공 자금으로 개발된 CCUS 기술의 개도국 무상/저리 이전 및 공동 연구 공조.<br>
+                        - 선진국의 '손실과 피해 기금(Loss and Damage Fund)' 출연 의무화 및 탄소 배출권 거래 수익의 개도국 재투입 제도화.</p>
+                        <p><strong>(문제 5-3)</strong> <br>
+                        - 첨단 기술 개발과 개인의 라이프스타일 전환 중 하나를 선택하되, 두 관점의 상보성을 통합하여 논리적 근거(기술의 한계 및 개인 실천의 한계 극복) 제시.</p>
                     </div>
                 `,
                 rubric: `
@@ -504,15 +512,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상:</span> 
-                            기후 정의의 개념과 기술 무역장벽 간의 상관관계를 정확히 입증하고 실효성 있는 국제 공조 모델을 구체적으로 도출함.
+                            기후 불평등의 구조적 원인을 정밀히 분석하고, 기후 정의에 기반한 구체적 국제 협력 방안 및 주체적 기후 윤리관을 도출함.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중:</span> 
-                            기후 불평등 원인은 설명하였으나 해결책이 원론적인 수준에 머무름.
+                            기후 불평등 현상은 지적했으나 국제 협력안이 원론적 수준에 그치고 주장은 다소 모호함.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하:</span> 
-                            제시문의 핵심인 기후 정의와 기술 격차를 연계하지 못함.
+                            기후 정의 개념 및 기술 무역 장벽과의 연계 이해 부족.
                         </div>
                     </div>
                 `
@@ -521,33 +529,36 @@
                 id: 6,
                 category: 'health',
                 categoryLabel: '보건 / 의료 / 바이오',
-                title: '[문제 6] 초고령화 사회의 돌봄 로봇 도입과 정서적 교감',
-                subtitle: '노인 돌봄 인력 부족 대안 vs 인간적 온기의 소외',
+                title: '[문제 6] 초고령사회 돌봄 로봇 도입과 감정적 진정성',
+                subtitle: '돌봄 인력난 극복용 AI 돌봄 로봇 보급, 기술적 감정 모방의 한계, 그리고 인간다운 돌봄의 존엄성',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `2025년 대한민국은 65세 이상 고령 인구 비율이 20%를 넘어서며 공식적으로 '초고령사회'에 진입했다. 요양보호사 등 돌봄 인력 난이 심화되자 정부와 지자체는 AI 반려돌봄 로봇 ‘효돌이’ 보급 사업을 확대했다. 효돌이는 독거노인의 약 복용 시간 알림, 긴급 이송 호출뿐만 아니라 "할머니 식사하셨어요?"와 같은 정서적 대화를 수행한다. 보건복지부 조사 결과, 돌봄 로봇을 도입한 가구 노인의 우울감 지수가 35% 감소하고 응급 상황 구조 성공률이 40% 증가했다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `사회학자 셰리 터클은 저서 『함께지만 외로운(Alone Together)』에서 기계와의 감정적 교감이 가진 위험성을 언급한다. 로봇은 인간의 감정을 진심으로 느끼는 것이 아니라, 사용자가 원하는 답변을 데이터 기반으로 계산해 출력할 뿐이다. 노년층이 실제 인간과의 관계 대신 편리한 로봇과의 대화에 익숙해질 경우, 인간 사회로부터의 실질적 고립이 고착화될 수 있다. 비판자들은 "효율성을 이유로 인간 돌봄을 기계로 대체하는 것은 노인의 존엄성을 저해하는 행위"라고 지적한다.`
+                        label: '[제시문]',
+                        text: `대한민국이 65세 이상 인구 비중 20%를 초과하는 초고령사회에 본격 진입함에 따라, 독거노인 증가와 요양 돌봄 인력의 심각한 부족 현상을 극복하기 위한 대안으로 AI 기반 돌봄 로봇(Care Robot)의 보급이 크게 확대되고 있다. 최근 현장에 도입된 AI 돌봄 로봇은 독거노인의 복약 시간 알림, 24시간 생체 신호 모니터링, 응급 상황 감지 및 자동 신고 기능뿐만 아니라, 자연어 처리 기술을 바탕으로 사용자의 일상 대화 상대가 되어주는 서비스를 제공한다. 실제로 돌봄 로봇을 도입한 지자체의 조사에 따르면 노년층의 우울감 지수가 35% 감소하고 응급 구호 골든타임 확보율이 급증하는 등 실용적 성과가 입증되었다.
+
+하지만 사회학자들과 생체윤리학자들은 AI 돌봄 로봇이 제공하는 정서적 교감의 본질에 대해 깊은 의문을 제기한다. 로봇의 대화와 친절한 응답은 노인의 감정을 실제 느끼는 것이 아니라, 수집된 빅데이터와 확률 알고리즘을 통한 '기술적 감정 모방(Simulated Empathy)'에 불과하다. 의인화된 로봇의 가짜 공감에 오랫동안 의존할 경우 노년층이 실제 인간과의 관계 맺기를 포기하고 사회적으로 더욱 고립될 수 있다는 지적이다.
+
+또한 국가와 사회가 돌봄을 인적 온기와 사회적 복지의 영역이 아닌 단순한 기술적 효율성의 문제로 접근할 경우, 노년층을 사회의 구성원에서 배제하고 '기계에 의한 격리 관리' 대상으로 전락시킬 수 있다는 우려가 커지고 있다. 편리하고 저렴한 로봇 돌봄이 인간 사회가 책임져야 할 공동체적 돌봄의 의무를 대체할 수 있는가에 대한 논란이 계속되고 있다.`
                     }
                 ],
                 questions: [
-                    "(문제 6-1) 제시문 [가]와 [나]에 나타난 돌봄 로봇 도입의 긍정적 성과와 사회·윤리적 우려 점을 비교 요약하시오.",
-                    "(문제 6-2) 당신이 복지 정책 담당자라면, 기술적 효율성과 인간적 존엄성을 동시에 만족시키는 '하이브리드 노인 돌봄 체계'를 어떻게 설계할 것인지 제시하시오."
+                    "(문제 6-1) 제시문에 나타난 돌봄 로봇 도입의 실용적 성과와 사회·윤리적 우려 점을 대조하여 요약하시오.",
+                    "(문제 6-2) 돌봄 로봇이 제공하는 '기술적 감정 모방'이 지닌 한계를 인간 사이의 진정한 공감 및 유대감과 비교하여 설명하시오.",
+                    "(문제 6-3) 노인의 존엄성과 인간적 온기를 보장하면서도 돌봄 인력 부족을 극복할 수 있는 '기술-인간 상보적 돌봄 체계' 구축 방안을 제시하시오."
                 ],
-                intent: "초고령화 문제의 대안인 첨단 돌봄 로봇의 실용성과 감정적 진정성 한계를 비교하고 인간 존엄에 바탕을 둔 기술 적용 방안을 고찰함.",
+                intent: "초고령화 문제의 대안인 첨단 돌봄 로봇의 실용성과 감정적 진정성의 한계를 이해하고 인간 중심의 기술 적용 방안을 도출할 수 있는지 평가.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 6-1)</strong> <br>
-                        - 긍정적 성과: 돌봄 인력 부족 보완, 독거노인의 우울감 감소, 응급상황 안전망 구축.<br>
-                        - 우려점: 로봇의 대화는 통계적 모방일 뿐 진정한 감정 교감이 아니며, 인간 관계로부터의 실질적 고립 및 존엄성 훼손 유발.</p>
+                        - 성과: 24시간 안전 모니터링, 응급 구호, 복약 알림 및 외로움 완화로 인력 난 해소.<br>
+                        - 우려: 대화의 감정 모방 한계, 인간과의 실질적 유대 차단, 노인을 기계로 격리 관리하는 존엄성 저해.</p>
                         <p><strong>(문제 6-2)</strong> <br>
-                        - 로봇의 역할: 24시간 모니터링, 신체적 수발, 단순 정보 제공 등 보조적 기능으로 제한.<br>
-                        - 인간의 역할: 사회복지사 및 지역 봉사자의 정기적 방문을 통한 깊은 정서적 교감 담당.<br>
-                        - 체계 설계: 로봇 모니터링 이상 징후 시 사람 생활지원사가 즉각 방문하는 '기술-인간 연계 시스템' 구축.</p>
+                        - 기술적 감정 모방: 빅데이터 계산 결과의 정형적 출력이며 고통과 기쁨에 대한 실질적 공감 및 윤리적 책임이 부재함.<br>
+                        - 인간의 공감: 상호 상처받을 수 있는 유한성과 정서적 주체성에 기반한 참된 진정성을 지님.</p>
+                        <p><strong>(문제 6-3)</strong> <br>
+                        - 로봇: 신체 수발 보조, 24시간 위급 상황 모니터링 등 정량적·물리적 업무 전담.<br>
+                        - 인간: 사회복지사 및 보호자의 정기적 방문을 통한 정서적 교감 전담 및 로봇 이상 감지 데이터와 연계된 맞춤형 인간 돌봄망 수립.</p>
                     </div>
                 `,
                 rubric: `
@@ -555,15 +566,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상:</span> 
-                            로봇의 정서 모방 한계를 존재론적으로 이해하고, 기술과 인간 노동의 상보적 역할 분담 모델을 설득력 있게 제시함.
+                            로봇의 기술적 감정 모방과 인간 공감의 본질적 차이를 깊이 있게 고찰하고, 기술과 인간의 효율적·윤리적 역할 분담 모델을 명확히 제시함.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중:</span> 
-                            장단점은 잘 요약하였으나 노인 돌봄 설계안이 상투적인 자원봉사 확대 수준에 머무름.
+                            장단점 요약은 양호하나 감정 모방의 한계 분석이 얕고 연계 모델 구상안이 상투적임.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하:</span> 
-                            제시문의 핵심 논점을 제대로 다루지 못함.
+                            질문 핵심인 인간 존엄성과의 관계 분석 부재.
                         </div>
                     </div>
                 `
@@ -572,32 +583,35 @@
                 id: 7,
                 category: 'society',
                 categoryLabel: '사회 / 데이터 / 윤리',
-                title: '[문제 7] 알고리즘 추천 시스템과 여론의 확증 편향(Filter Bubble)',
-                subtitle: '맞춤형 콘텐츠 알고리즘과 민주적 공론장의 해체',
+                title: '[문제 7] 알고리즘 추천 시스템과 필터 버블(Filter Bubble)',
+                subtitle: '소셜 미디어 맞춤형 알고리즘, 에코 챔버, 확증 편향 및 민주적 공론장의 양극화',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `주요 소셜 미디어 플랫폼과 영상 플랫폼은 사용자의 체류 시간을 극대화하기 위해 개인화 추천 알고리즘을 사용한다. 이 알고리즘은 사용자가 과거 클릭한 영상과 선호도를 분석하여 기호에 맞는 콘텐츠만을 끊임없이 추천한다. 2024년 한국언론진흥재단 조사에 따르면, 10~20대의 72%가 검색 엔진보다 숏폼 및 소셜 미디어 알고리즘 추천을 통해 뉴스를 소비하는 것으로 나타났다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `정치학자 손스타인은 이를 '에코 챔버(Echo Chamber; 반향실) 효과'와 '필터 버블(Filter Bubble)' 개념으로 설명한다. 자신과 유사한 의견만 반복해서 접하게 된 이용자들은 반대편 시각을 접할 기회를 잃게 되고, 자신의 편향된 확신을 더욱 강화한다. 결과적으로 사회적 이슈에 대한 합리적 토론과 타협이 불가능해지며, 극단적 양극화와 가짜 뉴스가 기승을 부려 민주주의의 기반을 흔들게 된다.`
+                        label: '[제시문]',
+                        text: `글로벌 소셜 미디어 플랫폼과 영상 공유 서비스들은 이용자의 체류 시간을 극대화하고 광고 수익을 늘리기 위해 고도화된 개인 맞춤형 추천 알고리즘을 사용한다. 이 알고리즘은 이용자의 과거 검색 기록, 클릭 패턴, 시청 시간, 좋아요 반응 등 미세한 디지털 흔적을 실시간으로 추적·분석하여 이용자가 가장 좋아하고 공감할 만한 콘텐츠만을 끊임없이 피드에 배치한다. 그 결과 이용자들은 자신과 유사한 성향의 정보와 의견에만 지속적으로 노출되는 '필터 버블(Filter Bubble)'과 '에코 챔버(Echo Chamber; 메아리 방)' 현상에 갇히게 된다.
+
+문제는 이러한 정보 편식 메커니즘이 개인의 확증 편향(Confirmation Bias)을 극대화한다는 점이다. 이용자들은 반대편 시각을 검증할 기회를 완전히 차단당한 채, 자극적이고 편향된 정보만을 진실로 확신하게 된다. 이는 사회 전체적으로 가짜 뉴스(Disinformation)가 급속도로 유포되는 토양이 되며, 서로 다른 견해를 가진 집단 간의 합리적인 대화, 타협, 설득을 불가능하게 만든다.
+
+언론학자들과 정치학자들은 이러한 추천 알고리즘의 상업적 운용이 민주주의를 받치는 사회적 공론장(Public Sphere)을 해체하고 있다고 경고한다. 공론장은 서로 다른 의견이 부딪히며 사회적 합의를 이끌어내는 공간이어야 하지만, 알고리즘은 이용자를 극단적인 양극화 진영으로 분열시키기 때문이다. 빅테크 기업의 상업적 이익 창출과 사회 전체의 민주적 공론장 유지라는 가치가 충돌하면서, 추천 알고리즘에 대한 사회적 통제 기준 마련이 시급한 과제로 떠올랐다.`
                     }
                 ],
                 questions: [
-                    "(문제 7-1) 제시문 [가]와 [나]를 바탕으로, 추천 알고리즘이 개인의 정보 소비 형태와 사회 전체의 공론장에 미치는 폐해를 설명하시오.",
-                    "(문제 7-2) 플랫폼 기업의 상업적 이익(체류 시간 증대)과 건강한 민주적 사회 형성을 조화시키기 위한 알고리즘 투명성 확보 및 디지털 리터러시 교육 방안을 논하시오."
+                    "(문제 7-1) 제시문에 나타난 추천 알고리즘이 개인의 정보 소비 형태와 사회 전체의 민주적 공론장에 미치는 폐해를 설명하시오.",
+                    "(문제 7-2) 플랫폼 기업의 상업적 이익 목표(체류 시간 증대)와 공공적 가치(공론장 보호)가 충돌하는 원인을 구조적으로 분석하시오.",
+                    "(문제 7-3) 필터 버블에 따른 확증 편향과 사회적 양극화를 극복하기 위해 도입해야 할 기술적·제도적 개선안과 개인의 실천 방안을 제시하시오."
                 ],
-                intent: "알고리즘 미디어가 초래하는 사회적 양극화 및 확증 편향 메커니즘을 이해하고 민주주의적 공론장 회복 방안을 모색할 수 있는지 평가.",
+                intent: "알고리즘 추천 구조가 가져오는 사회적 편향과 민주주의 해체 위험성을 이해하고 비판적 기술 개선안을 도출하는지 평가함.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 7-1)</strong> <br>
-                        - 개인 차원: 필터 버블로 인해 다양성 있는 정보 접근 차단, 확증 편향 강화.<br>
-                        - 사회 차원: 여론의 극단적 양극화, 가짜 뉴스 유포 심화, 타협과 합의라는 민주적 공론장 해체.</p>
+                        - 개인: 필터 버블과 에코 챔버로 타인의 시각이 차단되고 확증 편향이 고착화됨.<br>
+                        - 사회: 가짜 뉴스 유포, 대화와 타협이 상실된 극단적 사회적 양극화 및 민주적 공론장 해체.</p>
                         <p><strong>(문제 7-2)</strong> <br>
-                        - 기업/기술적 측면: 알고리즘 추천 기준의 투명한 공개, 반대 성향 콘텐츠를 일정 비율 노출시키는 '다양성 알고리즘 버튼' 옵션 제공.<br>
-                        - 교육적 측면: 정보의 출처와 편향성을 비판적으로 검증하는 '미디어 비판적 리터러시' 학교 교육 정규화.</p>
+                        기업의 광고 수익은 이용자의 체류 시간에 비례하므로 알고리즘이 자극적·편향적 콘텐츠를 우선 배치하는 반면, 공론장은 다양성, 균형성 및 객관적 사실성을 요구하기 때문에 근본적 이해충돌 발생.</p>
+                        <p><strong>(문제 7-3)</strong> <br>
+                        - 기술적/제도적: 추천 알고리즘 가중치 공개 투명성 법제화, '반대 관점 교차 노출' 추천 버튼 옵션 의무화.<br>
+                        - 개인적: 의도적으로 다양한 매체 구독, 자극적 헤드라인에 대한 교차 검증 및 비판적 미디어 리터러시 실천.</p>
                     </div>
                 `,
                 rubric: `
@@ -605,15 +619,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상:</span> 
-                            필터 버블과 에코 챔버의 개념을 명확히 제시하고, 민주주의의 해체 메커니즘을 구체적 예시와 함께 논리적으로 대안을 연결함.
+                            필터 버블 메커니즘과 기업 수익 모델 간의 구조적 충돌을 정밀하게 분석하고, 다양성 알고리즘 등 수준 높은 대안과 개인의 실천을 연계함.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중:</span> 
-                            알고리즘의 폐해는 파악했으나 대안이 자율 규제나 개인주의적 주의로 단순화됨.
+                            폐해 설명은 적절하나 플랫폼 기업의 수익 구조 분석이 약하고 대안이 상투적인 주의 노력에 그침.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하:</span> 
-                            제시문 내용을 이해하지 못하고 가짜 뉴스 처벌만 주장함.
+                            핵심 개념(필터 버블, 에코 챔버)에 대한 이해 부족.
                         </div>
                     </div>
                 `
@@ -622,32 +636,36 @@
                 id: 8,
                 category: 'health',
                 categoryLabel: '보건 / 의료 / 바이오',
-                title: '[문제 8] 크리스퍼(CRISPR) 유전자 가위 치료제 상용화와 바이오에틱스',
-                subtitle: '난치병 치료 혁신 vs \'맞춤형 아기\' 및 유전적 계급화 논란',
+                title: '[문제 8] 크리스퍼(CRISPR) 유전자 가위 상용화와 생명윤리',
+                subtitle: '유전자 교정 치료제의 최초 승인, 초고가 약가에 따른 의료 독점, 그리고 맞춤형 아기(Designer Baby) 우생학 논란',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `2023년 말, 세계 최초로 3세대 유전자 가위(CRISPR-Cas9)를 이용한 겸상 적혈구 빈혈증 치료제 '카스게비(Casgevy)'가 미국 FDA의 승인을 받았다. 환자의 줄기세포를 추출해 결함이 있는 유전자를 교정한 후 재삽입하는 이 치료법은 난치성 유전 질환의 근본적 완치 길을 열었다. 그러나 1회 치료 비용이 약 22억 원(220만 달러)에 달해 극소수 부유층만 혜택을 볼 수 있다는 고비용 구조가 한계로 지적된다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `생명윤리학자들은 유전자 치료의 범주가 '질병 치료'를 넘어 신장, 지능, 외모 등 '신체적 성능 교정 및 강화(Enhancement)'로 확장될 때 발생할 위험을 경고한다. 배아 단계에서의 유전자 조작을 통한 '맞춤형 맞춤 아기(Designer Baby)'의 탄생은 생물학적 특성마저 자본에 의해 결정되는 '유전적 우생학' 및 신종 계급 사회를 초래할 수 있다.`
+                        label: '[제시문]',
+                        text: `3세대 유전자 가위 기술인 '크리스퍼(CRISPR-Cas9)'를 이용한 낫모양 적혈구 빈혈증 유전자 치료제 '카스게비(Casgevy)'가 미국 FDA 및 주요국 보건당국의 최초 승인을 받으면서 난치성 유전 질환 치료의 새 시대가 열렸다. 크리스퍼 기술은 DNA의 특정 변이 부위를 마치 가위처럼 정밀하게 절단하고 교정하여, 기존 치료법으로는 완치가 불가능했던 중증 희귀 유전병을 근본적으로 치료할 수 있는 혁신적 생명공학 기술이다.
+
+그러나 유전자 가위 치료제의 상용화는 극심한 경제적 불평등과 윤리적 경계선 문제를 동시에 수면 위로 올렸다. 카스게비의 1회 치료비는 약 220만 달러(한화 약 30억 원)에 달해, 극소수 부유층이나 보건 인프라가 갖춰진 선진국 환자들만이 접근 가능하다. 대다수의 중저소득국 환자들은 생명을 살릴 수 있는 기술이 존재함에도 불구하고 경제적 이유로 치료에서 소외당하는 생명권의 불평등을 겪고 있다.
+
+더욱 심각한 윤리적 쟁점은 유전자 교정의 범위를 어디까지 허용할 것인가에 있다. 생명윤리학자들은 현재의 '질병 치료' 목적 유전자 교정이 머지않아 신장, 지능, 외모, 운동 능력 등 인간의 형질을 인위적으로 개조하는 '맞춤형 아기(Designer Baby)' 및 인간 신체 성능 강화로 확장될 위험성을 경고한다. 배아 단계나 생식세포에서의 인위적 유전자 조작은 세대를 거쳐 세습되며, 자본력을 갖춘 계층이 생물학적 우수성마저 독점하는 신종 '유전적 계급 사회'와 우생학적 재앙을 초래할 수 있다는 지적이다.`
                     }
                 ],
                 questions: [
-                    "(문제 8-1) 제시문 [가]와 [나]를 통해 유전자 편집 기술이 난치병 극복이라는 신기술의 혜택과 동시에 초래할 수 있는 경제적·윤리적 문제점을 설명하시오.",
-                    "(문제 8-2) 유전자 교정 기술의 허용 범위를 어디까지로 제한해야 할지에 대한 사회적 기준을 제시하고, 의료 접근성의 불평등을 완화하기 위한 정책을 논하시오."
+                    "(문제 8-1) 제시문에 등장한 크리스퍼 유전자 가위 치료제의 혁신적 가치와 동시에 야기되는 경제적·윤리적 문제점을 요약하시오.",
+                    "(문제 8-2) 유전자 교정 기술의 적용 범위를 '치료'와 '신체·지능 강화' 관점에서 어디까지 제한해야 할지 명확한 윤리적 경계선 기준을 제시하시오.",
+                    "(문제 8-3) 초고가 유전자 치료제의 혜택이 특정 부유층에 독점되지 않도록 보건 의료 접근성을 제고하기 위한 제도적 대안을 논하시오."
                 ],
-                intent: "바이오 첨단 기술인 유전자 편집의 희망과 우려를 이해하고 생명윤리적 가치관 확립 및 접근성 확보 방안을 평가함.",
+                intent: "첨단 생명공학 유전자 가위 기술의 희망과 우려를 이해하고 생명윤리적 경계선 및 보건 복지 정책안을 제시할 수 있는지 평가함.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 8-1)</strong> <br>
-                        - 경제적 문제: 천문학적 치료 비용으로 인한 의료 접근성 극단적 양극화.<br>
-                        - 윤리적 문제: 치료를 넘어선 우생학적 '성능 강화' 및 배아 조작 시 유전적 계급 고착화 위험.</p>
+                        - 가치: 난치성 유전 질환의 근본적 완치 가능성 제시.<br>
+                        - 문제점: 초고가 약가로 인한 의료 독점 및 계층 간 치료 격차, 맞춤형 아기 등 우생학적 신체 개조로 인한 유전적 계급화 위험.</p>
                         <p><strong>(문제 8-2)</strong> <br>
-                        - 사회적 기준: 치명적 난치성 유전 질환 치료 목적의 체세포 편집에 한해 엄격히 허용하되, 배아 단계의 형질 강화(지능, 외모 등) 조작은 전면 금지.<br>
-                        - 정책 방안: 희귀 유전병 치료제에 대한 국가 건강보험 적용 확대 및 공공 바이오 파운드리 구축을 통한 약가 인하 유도.</p>
+                        - 허용: 치명적 난치성 질환 치료 목적의 '체세포 유전자 편집'.<br>
+                        - 금지: 지능·외모·신체 강화를 목적으로 한 편집 및 후세대에 세습되는 '배아·생식세포 유전자 조작' 전면 금지.</p>
+                        <p><strong>(문제 8-3)</strong> <br>
+                        - 위험분담제(Outcome-based pricing) 적용 및 희귀 질환 국가 건강보험 급여 확대.<br>
+                        - 공공 바이오 파운드리 구축 및 국제 공조를 통한 기술 이전을 통해 약가 인하 유도.</p>
                     </div>
                 `,
                 rubric: `
@@ -655,15 +673,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상:</span> 
-                            치료와 강회의 생명윤리적 경계선을 명확히 정립하고, 약가 인하 및 공공성 확보를 위한 구체적 보건 정책을 제시함.
+                            체세포와 생식세포/치료와 강화의 생명윤리적 기준을 명확히 제시하고, 약가 인하 및 공공 건강보험 적용 등 구체적 공공성 대안을 정밀하게 논술함.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중:</span> 
-                            치료제의 비싼 가격 문제와 맞춤형 아기 윤리를 논했으나 명확한 허용 기준 제시가 다소 모호함.
+                            윤리적 문제는 지적했으나 허용 기준이 다소 모호하고 보건 정책 대안이 원론적임.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하:</span> 
-                            유전자 가위 기술에 대한 이해 부족.
+                            유전자 가위 기술의 기초 개념 및 쟁점 파악 부실.
                         </div>
                     </div>
                 `
@@ -672,31 +690,34 @@
                 id: 9,
                 category: 'ai',
                 categoryLabel: 'AI / 첨단기술',
-                title: '[문제 9] 완전 자율주행 알고리즘과 트롤리 건너뛰기(Trolley Dilemma)',
-                subtitle: '도덕적 알고리즘 설계 및 사고 발생 시 책임 법안',
+                title: '[문제 9] 완전 자율주행 알고리즘과 트롤리 딜레마(Trolley Dilemma)',
+                subtitle: '레벨 4 자율주행, 불가피한 사고 상황에서의 도덕적 프로그래밍 불가능성, 과실 책임 분담',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `레벨 4 이상 완전 자율주행차가 상용화를 앞두고 있다. 자율주행 AI는 차선 변경과 장애물 회피를 스스로 판단한다. 그러나 불가피한 충돌 상황에서 알고리즘이 누구를 먼저 보호해야 하는가에 대한 '트롤리 딜레마(Trolley Dilemma)' 논란이 재점화되었다. 예를 들어, 갑자기 횡단보도로 뛰어든 보행자 여럿을 피하기 위해 핸들을 틀어 보행자를 살릴 것인가, 아니면 중앙분리대를 받아 탑승자를 보호할 것인가의 프로그래밍 문제다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `독일 정부는 자율주행 윤리 지침을 통해 "보행자의 연령, 성별, 인종 등 어떠한 개인적 특성도 사고 회피 판단의 기준이 될 수 없으며, 인명 피해 최소화를 최우선으로 하되 탑승자와 보행자의 생명 가치는 동등하다"고 명시했다. 한편 보험회사와 자동차 제조사는 자율주행차 사고 시 책임을 제조사(제조물 책임법)에 물을 것인지, 차주에 물을 것인지에 대한 법적 규정 미비가 산업 성장의 걸림돌이라고 주장한다.`
+                        label: '[제시문]',
+                        text: `운전자의 개입 없이 차량 스스로 주행하는 레벨 4 이상 완전 자율주행 자동차의 상용화가 임박함에 따라, 차선 이탈이나 갑작스러운 장애물 출현 등 불가피한 충돌 상황에서 자율주행 AI가 어떤 판단을 내리도록 프로그래밍할 것인가에 대한 철학적 '트롤리 딜레마(Trolley Dilemma)' 논쟁이 격화되고 있다. 예컨대 브레이크가 고장 난 자율주행차가 보행자 여러 명을 치일 것인가, 아니면 핸들을 틀어 인도로 돌진함으로써 탑승자를 희생시킬 것인가와 같은 도덕적 선택의 문제다.
+
+독일 자율주행 윤리위원회 지침은 "사고 상황에서 보행자의 연령, 성별, 신체적 조건 등 어떠한 개인적 특성도 차별적 회피 기준으로 삼아서는 안 되며, 모든 인간의 생명 가치는 동등하게 보호받아야 한다"고 명시했다. 그러나 자율주행 소프트웨어 개발사들은 현실적으로 알고리즘에 공리주의적 생명 수 계산이나 탑승자 우선 보호 중 어느 하나를 프로그래밍하더라도 도덕적·법적 비난을 면하기 어렵다고 토로한다. 탑승자 보호를 후순위로 둘 경우 소비자가 자율주행차를 구매하지 않을 것이며, 보행자 희생을 용인할 경우 사회적 윤리 수용성을 얻을 수 없기 때문이다.
+
+더욱이 사고 발생 시 법적 과실 책임 배분 기준 확립이 시급한 과제로 떠올랐다. 사고의 원인을 자율주행 모드를 켜둔 운전자(차주)의 과실로 볼 것인가, 시스템 결함을 일으킨 자동차 제조사 및 소프트웨어 개발사의 제조물 책임으로 볼 것인가를 두고 법제화 논의가 분분하다. 기술의 완전성이 확보되지 않은 전환기 속에서 신기술 수용을 위한 사회적 법·윤리 체계의 재설계가 요구되고 있다.`
                     }
                 ],
                 questions: [
-                    "(문제 9-1) 제시문 [가]의 '트롤리 딜레마' 상황에서 AI 알고리즘에 정답을 프로그래밍하는 것이 본질적으로 불가능한 철학적·윤리적 이유를 설명하시오.",
-                    "(문제 9-2) 제시문 [나]의 독일 윤리 지침을 참고하여, 완전 자율주행 사고 발생 시 책임 소재 규명 체계와 사회적 합의 도출 방안을 논하시오."
+                    "(문제 9-1) 제시문의 '트롤리 딜레마' 상황을 자율주행 AI 알고리즘에 단순한 정답으로 사전 프로그래밍하는 것이 본질적으로 불가능한 윤리적 이유를 설명하시오.",
+                    "(문제 9-2) 자율주행 모드 운행 중 사고가 발생했을 때, 운전자, 자동차 제조사, AI 소프트웨어 개발사 간의 합리적인 책임 분담 기준을 구상하여 논하시오.",
+                    "(문제 9-3) 첨단 신기술 도입 과정에서 발생하는 이와 같은 도덕적 위험과 사회적 갈등을 극복하기 위한 절차적 대안을 제시하시오."
                 ],
-                intent: "자율주행 첨단기술에 내재된 공학적 윤리 문제와 사고 책임을 법적·철학적 관점에서 조망할 수 있는지 평가.",
+                intent: "자율주행 첨단 공학 기술에 내재된 철학적 생명 가치 딜레마와 법적 책임 분담 구조를 체계적으로 파악하는지 평가.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 9-1)</strong> <br>
-                        인간의 생명 가치는 정량적으로 비교하거나 계산할 수 없는 절대적 존엄성을 지니므로, 어떤 선택이든 타인의 생명을 수단화한다는 공리주의적 한계에 부딪히기 때문임.</p>
+                        인간의 생명은 정량적 수치로 가치를 가늠하거나 비교할 수 없는 절대적 존엄성을 가지므로, 어떠한 프로그래밍 규칙 설정이든 타인의 생명을 수단화하는 공리주의적 한계와 정당성 위기에 부딪힘.</p>
                         <p><strong>(문제 9-2)</strong> <br>
-                        - 책임 소재: 자율주행 모드 작동 중 사고는 원칙적으로 제조사의 소프트웨어 결함(제조물 책임)으로 규정하되, 운전자 과실(경고 무시 등) 입증 시 비례 분담.<br>
-                        - 사회적 합의: 블랙박스 및 AI 운행 데이터 기록 장치(EDR) 의무화 및 국가 자율주행 사고 전담 배상 기금 신설.</p>
+                        - 자율주행 모드 원인 사고: 소프트웨어 결함 및 시스템 책임이 원칙이므로 제조사/개발사 책임을 우선 적용.<br>
+                        - 운전자 경고 무시 및 수동 개입 실패: 운전자의 관리 소홀 과실을 입증하여 책임을 비례 분담하는 '하이브리드 책임 모델'.</p>
+                        <p><strong>(문제 9-3)</strong> <br>
+                        - 운행기록장치(EDR) 데이터 표준화 및 사고 원인 조사 전담 공공 기금 및 시민 윤리위원회 구축을 통한 사회적 합의 도출.</p>
                     </div>
                 `,
                 rubric: `
@@ -704,15 +725,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상:</span> 
-                            생명 가치 계산 불가능성의 철학적 의미를 도출하고, 제조물 책임법과 운행 데이터 입증 체계를 결합한 명확한 법적 모델 제시.
+                            생명 가치 계산 불가능성의 철학적 깊이를 이해하고, EDR 기반 객관적 책임 분담 및 공공 기금 수립 등 구체적 대안을 입체적으로 논술함.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중:</span> 
-                            딜레마의 이유를 설명했으나 책임 분담에 대한 수단 제시가 다소 불명확함.
+                            트롤리 딜레마는 설명했으나 책임 분담 대안이 한쪽으로 무조건 치우치거나 당위성에 머무름.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하:</span> 
-                            단순히 운전자나 제조사 한쪽에 무조건적 책임을 지움.
+                            질문 핵심 분석 부족.
                         </div>
                     </div>
                 `
@@ -721,31 +742,35 @@
                 id: 10,
                 category: 'society',
                 categoryLabel: '사회 / 데이터 / 윤리',
-                title: '[문제 10] 뇌-컴퓨터 인터페이스(BCI) 기술과 신경 프라이버시(Neuro-privacy)',
-                subtitle: '뇌파 빅데이터의 상업적 활용과 인간 생체 데이터 침해',
+                title: '[문제 10] 뇌-컴퓨터 인터페이스(BCI)와 신경 프라이버시',
+                subtitle: '뇌파 데이터 상업적 수집, 무의식적 선호 분석, 내면적 자유권 침해 및 신경 권리(Neuro-rights)',
                 passages: [
                     {
-                        label: '[가]',
-                        text: `최근 뉴럴링크 등 뇌-컴퓨터 인터페이스(BCI; Brain-Computer Interface) 기술이 발전하면서 생각을 텍스트로 전환하거나 뇌파로 기기를 조종하는 기술이 현실화되었다. 마비 환자의 의사소통 재활에 기여하고 있으나, 최근 글로벌 빅테크 기업들이 스마트 웨어러블 헤드셋을 통해 사용자의 집중도, 감정 변화, 잠재적 구매 욕구 등 '뇌파 데이터'를 상업적으로 수집하기 시작했다.`
-                    },
-                    {
-                        label: '[나]',
-                        text: `생체 윤리학자들은 뇌파 데이터가 단순한 위치나 검색 기록과 달리 인간의 무의식과 내면의 고유한 사고 과정까지 담고 있다는 점에 주목한다. 이를 상업적으로 이용해 타깃 광고를 내보내거나, 기업이 채용 시 입사 지원자의 무의식적 편향을 뇌파로 측정할 경우 인간의 생각할 자유와 '신경 프라이버시(Neuro-privacy)'권이 근본적으로 침해될 수 있다.`
+                        label: '[제시문]',
+                        text: `생체 공학과 인공지능의 결합으로 인간의 뇌 신호를 직접 컴퓨터와 연결하는 '뇌-컴퓨터 인터페이스(BCI; Brain-Computer Interface)' 기술이 비약적으로 발전하고 있다. BCI 기술은 사고나 질병으로 사지가 마비된 환자가 생각만으로 로봇 팔을 조종하거나 의사소통할 수 있게 해주는 의료적 혁신을 이끌어내고 있다. 나아가 글로벌 빅테크 기업들은 뇌파 측정 센서가 탑재된 헤드폰, 스마트 안경 등 일반 소비자용 웨어러블 BCI 기기를 대량 상용화하기 시작했다.
+
+그러나 BCI 기기의 범용화는 차세대 개인정보인 '뇌파 빅데이터'의 상업적 수집과 남용이라는 심각한 프라이버시 침해 우려를 낳고 있다. 이용자가 BCI 기기를 착용하고 있는 동안 수집되는 뇌파 데이터는 사용자의 집중도, 무의식적 감정 변화, 특정 제품에 대한 호감도, 정서적 불안 상태 등을 실시간으로 추출해 낸다. 기업들은 이를 분석하여 이용자가 인지하기도 전에 구매 욕구를 자극하는 타깃 뉴로마케팅(Neuromarketing)에 활용하거나, 채용 평가 시 입사 지원자의 무의식적 성향과 편향을 측정하는 데 악용할 위험이 크다.
+
+생체윤리학자들은 뇌파 데이터가 외부 행동이나 위치 정보와 같은 기존 개인정보와는 차원이 다른 위험성을 지닌다고 경고한다. 뇌파는 인간이 의식적으로 통제할 수 없는 '내면의 무의식과 사고 과정 그 자체'를 그대로 드러내기 때문이다. 타인이나 기업이 인간의 무의식을 읽고 가공할 수 있게 된다면, 인간 고유의 내면적 자유권과 생각할 자유가 근본적으로 침해당할 수 있다. 이에 따라 인간의 뇌 데이터와 신경 활동을 법적으로 보호하기 위한 '신경 권리(Neuro-rights)' 명시 논의가 국제적 화두로 떠올랐다.`
                     }
                 ],
                 questions: [
-                    "(문제 10-1) 제시문 [가]와 [나]를 바탕으로, BCI 기술을 통해 수집되는 뇌파 데이터가 기존 개인정보와 비교하여 지니는 독특한 위험성을 설명하시오.",
-                    "(문제 10-2) BCI 기술의 의료적 혁신을 촉진하면서도 개인의 '신경 프라이버시'를 보호하기 위한 기술적·제도적 방안을 논하시오."
+                    "(문제 10-1) 제시문을 바탕으로 BCI 기술을 통해 수집되는 '뇌파 데이터'가 기존의 개인정보와 비교하여 지니는 본질적 위협 요인을 설명하시오.",
+                    "(문제 10-2) 무의식적 뇌파 정보가 상업적 뉴로마케팅이나 기업의 채용 평가 등에 활용될 때 발생할 수 있는 인권 침해 양상을 논하시오.",
+                    "(문제 10-3) BCI 기술의 의료적 혁신을 촉진하면서도 개인의 '신경 권리(Neuro-rights)'를 보호하기 위한 기술적·법적 대안을 제시하시오."
                 ],
-                intent: "BCI 및 최첨단 뇌과학 기술의 발전이 초래할 차세대 개인정보/신경 프라이버시 침해 문제를 비판적으로 검토하고 대안을 구상하는 능력 평가.",
+                intent: "BCI 최첨단 기술 발전이 초래할 차세대 신경 프라이버시 침해 문제를 비판적으로 검토하고 인간 존엄성에 기초한 대안을 제시할 수 있는지 평가함.",
                 solution: `
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[문항 해설 및 모범 답안]</h4>
                         <p><strong>(문제 10-1)</strong> <br>
-                        기존 개인정보는 개인이 의식적으로 입력하거나 행동한 외적 정보인 반면, 뇌파 데이터는 개인의 통제 범위를 벗어난 무의식, 솔직한 감정 상태, 내면의 사고 과정 자체를 노출시키므로 인격의 존엄성과 내면적 자유권을 직접 위협함.</p>
+                        기존 개인정보는 수용자가 의식적으로 입력·제공하는 외부 활동 데이터인 반면, 뇌파 데이터는 본인도 통제 불가능한 내면의 무의식과 사고 과정 그 자체를 노출시키므로 내면의 자율권을 훼손함.</p>
                         <p><strong>(문제 10-2)</strong> <br>
-                        - 기술적 방안: 뇌파 데이터의 로컬 단말기 내 암호화 처리(온디바이스 BCI) 및 마스킹 기술 적용.<br>
-                        - 제도적 방안: '신경 권리(Neuro-rights)'를 기본권으로 법제화하고, 상업적 뇌파 수집 및 입사/보험 평가 활용을 법적으로 엄격히 금지함.</p>
+                        - 뉴로마케팅: 무의식적 선호 조작으로 이성적 소비 자율성 침해.<br>
+                        - 채용 평가: 검증되지 않은 생체 정보 측정으로 신종 성향 차별 및 개인 사상 검증 수단화 위험.</p>
+                        <p><strong>(문제 10-3)</strong> <br>
+                        - 기술적: 온디바이스(On-device) 뇌파 암호화 및 무의식 원시 데이터 외부 전송 차단 기술 적용.<br>
+                        - 법적: 헌법 및 개별법 상 '신경 권리(Neuro-rights)' 명시, 뇌파 데이터의 상업적·채용 목적 활용 전면 금지 법제화.</p>
                     </div>
                 `,
                 rubric: `
@@ -753,15 +778,15 @@
                         <h4 class="font-bold text-slate-900 dark:text-white border-b pb-2">[평가 및 채점 기준]</h4>
                         <div class="bg-emerald-50 dark:bg-emerald-950/30 p-3 rounded-lg border border-emerald-200 dark:border-emerald-800">
                             <span class="font-bold text-emerald-800 dark:text-emerald-300">상:</span> 
-                            내면적 무의식 데이터라는 뇌파의 본질적 위험성을 논리적으로 구분하고, 신경 권리 법제화 등 구체적 신개념 윤리 대안을 제시함.
+                            무의식 데이터로서 뇌파의 본질적 위험성을 명확히 입증하고, 신경 권리 법제화 및 온디바이스 암호화 등 입체적 방안을 논술함.
                         </div>
                         <div class="bg-amber-50 dark:bg-amber-950/30 p-3 rounded-lg border border-amber-200 dark:border-amber-800">
                             <span class="font-bold text-amber-800 dark:text-amber-300">중:</span> 
-                            뇌파의 위험성은 잘 설명했으나 해결책이 기존 개인정보 보호법 적용 수준에 그침.
+                            위험성은 파악했으나 대안이 기존 개인정보 보호 수준의 원론적 설명에 머무름.
                         </div>
                         <div class="bg-red-50 dark:bg-red-950/30 p-3 rounded-lg border border-red-200 dark:border-red-800">
                             <span class="font-bold text-red-800 dark:text-red-300">하:</span> 
-                            BCI 기술에 대한 이해가 전무함.
+                            BCI 기술 및 신경 프라이버시 개념 이해 부실.
                         </div>
                     </div>
                 `
@@ -775,7 +800,6 @@
         let isTimerRunning = false;
         let timerPhase = 'reading'; // 'reading' (10m) or 'answering' (5m)
 
-        // Toast Notification System
         function showToast(title, message) {
             const toast = document.getElementById('toastNotification');
             const titleEl = document.getElementById('toastTitle');
@@ -792,10 +816,9 @@
             setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
-            }, 4500);
+            }, 4000);
         }
 
-        // Initialize App on DOM Load
         window.addEventListener('DOMContentLoaded', () => {
             try {
                 renderProblemList();
@@ -805,7 +828,6 @@
             }
         });
 
-        // Theme Toggle
         function checkSystemTheme() {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 document.documentElement.classList.add('dark');
@@ -816,7 +838,6 @@
             document.documentElement.classList.toggle('dark');
         }
 
-        // View Switching
         function switchView(viewName) {
             const listView = document.getElementById('listView');
             const examView = document.getElementById('examView');
@@ -834,7 +855,6 @@
             }
         }
 
-        // Filter Category safely
         function filterCategory(cat, targetBtn) {
             activeFilter = cat;
             const buttons = document.querySelectorAll('#filterBtnGroup .filter-btn');
@@ -898,13 +918,15 @@
                             ${item.title}
                         </h3>
                         
-                        <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-3 leading-relaxed">
                             ${item.subtitle}
                         </p>
                     </div>
 
                     <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between">
-                        <span class="text-xs text-slate-400">질문 문항 수: ${item.questions.length}개</span>
+                        <span class="text-xs text-brand-600 dark:text-brand-400 font-semibold">
+                            <i class="fa-solid fa-file-circle-check mr-1"></i> 심층 제시문 1개 · 질문 3개
+                        </span>
                         <button onclick="loadExam(${item.id})" class="px-4 py-2 bg-slate-900 dark:bg-slate-100 hover:bg-brand-600 dark:hover:bg-brand-500 text-white dark:text-slate-900 dark:hover:text-white text-xs font-bold rounded-xl transition flex items-center space-x-1.5 shadow-sm">
                             <span>응시하기</span>
                             <i class="fa-solid fa-arrow-right"></i>
@@ -925,25 +947,35 @@
             document.getElementById('examMetaTag').innerText = `Set ${exam.id} | ${exam.categoryLabel}`;
             document.getElementById('examTitle').innerText = exam.title;
 
-            // Render Passages
+            // Render Passage (Exactly 1)
             const passagesContainer = document.getElementById('examPassages');
             passagesContainer.innerHTML = '';
             exam.passages.forEach(p => {
                 const box = document.createElement('div');
-                box.className = "bg-slate-50 dark:bg-slate-900/60 p-4 sm:p-5 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2";
+                box.className = "bg-slate-50 dark:bg-slate-900/60 p-5 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3";
+                
+                // Format text with proper paragraph spacing
+                const formattedText = p.text.split('\n\n').map(paragraph => `<p class="leading-relaxed mb-3">${paragraph}</p>`).join('');
+                
                 box.innerHTML = `
-                    <div class="font-bold text-brand-600 dark:text-brand-400 text-sm">${p.label}</div>
-                    <div class="text-xs sm:text-sm leading-relaxed">${p.text}</div>
+                    <div class="font-bold text-brand-600 dark:text-brand-400 text-sm flex items-center border-b border-slate-200 dark:border-slate-700/80 pb-2 mb-2">
+                        <i class="fa-solid fa-book-open mr-2"></i> ${p.label} (10분 분석용 심층 제시문)
+                    </div>
+                    <div class="text-xs sm:text-sm leading-relaxed text-slate-700 dark:text-slate-200 whitespace-pre-line">${formattedText}</div>
                 `;
                 passagesContainer.appendChild(box);
             });
 
-            // Render Questions
+            // Render Questions (Exactly 3)
             const questionsContainer = document.getElementById('examQuestions');
-            questionsContainer.innerHTML = `<h4 class="font-bold text-slate-900 dark:text-white text-sm mb-3"><i class="fa-solid fa-circle-question text-brand-600 mr-2"></i>면접 질문</h4>`;
+            questionsContainer.innerHTML = `
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-3 flex items-center">
+                    <i class="fa-solid fa-circle-question text-brand-600 mr-2"></i> 면접 심층 질문 (총 3문항)
+                </h4>
+            `;
             exam.questions.forEach((q) => {
                 const qBox = document.createElement('div');
-                qBox.className = "p-3.5 bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-800/40 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 leading-relaxed";
+                qBox.className = "p-4 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-800/40 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 leading-relaxed shadow-sm";
                 qBox.innerText = q;
                 questionsContainer.appendChild(qBox);
             });
@@ -955,7 +987,7 @@
             resetTimer('reading');
 
             // Render Modal Body content
-            document.getElementById('modalTitle').innerText = `[Set ${exam.id}] 출제의도 및 채점 기준`;
+            document.getElementById('modalTitle').innerText = `[Set ${exam.id}] 출제의도 및 3문항 해설·채점기준`;
             document.getElementById('modalBody').innerHTML = `
                 <div class="space-y-6">
                     <div class="bg-slate-50 dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
@@ -968,10 +1000,9 @@
             `;
 
             switchView('exam');
-            showToast(`[Set ${exam.id}] 로드 완료`, "10분 제시문 숙지 후 5분 답변 연습을 시작하세요.");
+            showToast(`[Set ${exam.id}] 로드 완료`, "10분 간 심층 제시문을 다각도로 분석한 후 메모장에 답변을 구상하세요.");
         }
 
-        // Random Exam Generator
         function startRandomExam() {
             const randomIndex = Math.floor(Math.random() * EXAM_SETS.length);
             loadExam(EXAM_SETS[randomIndex].id);
@@ -995,7 +1026,7 @@
                 // Start Timer
                 isTimerRunning = true;
                 document.getElementById('timerStartText').innerText = "일시정지";
-                showToast("타이머 시작", timerPhase === 'reading' ? "제시문 숙지 시간(10분) 카운트다운을 시작합니다." : "면접 답변 시간(5분) 카운트다운을 시작합니다.");
+                showToast("타이머 시작", timerPhase === 'reading' ? "제시문 분석 및 구상 시간(10분) 카운트다운을 시작합니다." : "면접 답변 시간(5분) 카운트다운을 시작합니다.");
                 
                 timerInterval = setInterval(() => {
                     if (timerSeconds > 0) {
@@ -1033,16 +1064,16 @@
         function switchTimerPhase() {
             if (timerPhase === 'reading') {
                 resetTimer('answering');
-                showToast("답변 모드 전환", "면접 답변 시간 5분 타이머로 설정되었습니다.");
+                showToast("답변 모드 전환", "면접 답변 시간 5분 타이머로 전환되었습니다.");
             } else {
                 resetTimer('reading');
-                showToast("숙지 모드 전환", "제시문 숙지 시간 10분 타이머로 설정되었습니다.");
+                showToast("숙지 모드 전환", "제시문 분석 시간 10분 타이머로 전환되었습니다.");
             }
         }
 
         function handleTimerExpire() {
             if (timerPhase === 'reading') {
-                showToast("시간 종료", "제시문 숙지 시간(10분)이 종료되었습니다. 면접 답변 모드(5분)로 자동 전환합니다.");
+                showToast("숙지 시간 종료", "제시문 숙지 시간(10분)이 종료되었습니다. 면접 답변 모드(5분)로 자동 전환합니다.");
                 resetTimer('answering');
                 toggleTimer();
             } else {
@@ -1051,7 +1082,6 @@
             }
         }
 
-        // Modal Controls
         function toggleSolutionModal() {
             const modal = document.getElementById('solutionModal');
             if (modal) {
