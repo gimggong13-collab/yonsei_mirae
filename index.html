@@ -40,6 +40,39 @@
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         .dark .custom-scrollbar::-webkit-scrollbar-track { background: #1e293b; }
         .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }
+
+        /* Print Stylesheet for Precise A4 Two-Page Formatting */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 10mm 12mm 10mm 12mm;
+            }
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-family: 'Noto Sans KR', sans-serif !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            /* Hide non-printable web UI elements */
+            header, main, #solutionModal, #toastNotification {
+                display: none !important;
+            }
+            /* Show print container */
+            #printSection {
+                display: block !important;
+                visibility: visible !important;
+            }
+            .page-break {
+                page-break-before: always !important;
+                break-before: page !important;
+            }
+        }
+        
+        /* Web View default hide print area */
+        #printSection {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
@@ -79,16 +112,16 @@
             <div class="bg-gradient-to-r from-brand-900 via-brand-700 to-indigo-800 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
                 <div class="relative z-10 max-w-3xl">
                     <span class="inline-block px-3 py-1 bg-brand-500/30 border border-brand-400/30 rounded-full text-xs font-semibold mb-3 tracking-wide">
-                        <i class="fa-solid fa-clock-sharp mr-1"></i> 10분 독해·분석 맞춤 실전 심층 제시문
+                        <i class="fa-solid fa-clock mr-1"></i> 10분 독해·분석 맞춤 실전 심층 제시문
                     </span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">2026-2027 대학 입시 심층 면접 완벽 대비</h2>
                     <p class="text-slate-200 text-sm sm:text-base leading-relaxed mb-4">
-                        실제 주요 대학(서울대·연세대·고려대 등)의 제시문 기반 면접 규격에 맞추어 **10분 간 분석하기 적합한 분량과 다층적 쟁점을 담은 제시문 1개**와 **3단계 심층 질문**으로 완성되었습니다.
+                        실제 주요 대학(서울대·연세대·고려대 등)의 제시문 기반 면접 규격에 맞추어 **10분 간 분석하기 적합한 분량과 다층적 쟁점을 담은 제시문 1개**와 **3단계 심층 질문**으로 구성되었습니다.
                     </p>
                     <div class="flex flex-wrap gap-4 text-xs sm:text-sm text-slate-300">
                         <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 10분 숙지용 분량 확충 제시문</div>
                         <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 제시문 1개 & 질문 3개 완벽 통일</div>
-                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> 출제의도 및 3단계 채점기준(상/중/하)</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-1.5"></i> A4 2장 문제/구상 메모장 인쇄 기능</div>
                     </div>
                 </div>
                 <i class="fa-solid fa-brain absolute -right-6 -bottom-8 text-white/10 text-9xl pointer-events-none"></i>
@@ -116,14 +149,20 @@
 
         <!-- VIEW 2: Interactive Exam / Practice View -->
         <section id="examView" class="hidden space-y-6">
-            <!-- Navigation Back Bar -->
+            <!-- Navigation Back Bar & Print Button -->
             <div class="flex items-center justify-between bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <button onclick="switchView('list')" class="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-brand-600 font-semibold text-sm transition">
                     <i class="fa-solid fa-arrow-left"></i>
                     <span>문제 목록으로 돌아가기</span>
                 </button>
-                <div id="examMetaTag" class="text-xs px-3 py-1 rounded-full font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                    Set 1 | 첨단계열
+                <div class="flex items-center space-x-3">
+                    <button onclick="printProblem(currentExam ? currentExam.id : 1)" class="bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-100 px-3.5 py-1.5 rounded-lg font-semibold text-xs border border-slate-300 dark:border-slate-600 transition flex items-center space-x-1.5">
+                        <i class="fa-solid fa-print text-brand-600 dark:text-brand-400"></i>
+                        <span>문제 인쇄 (A4 2장)</span>
+                    </button>
+                    <div id="examMetaTag" class="text-xs px-3 py-1.5 rounded-full font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                        Set 1 | 첨단계열
+                    </div>
                 </div>
             </div>
 
@@ -251,6 +290,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Hidden Print Target Section (A4 2-Page Standard Output) -->
+    <div id="printSection"></div>
 
     <script>
         // Updated dataset: Exactly 1 Expanded Passage ([제시문]) suitable for 10-minute reading, and 3 Questions per Set
@@ -924,9 +966,10 @@
                     </div>
 
                     <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between">
-                        <span class="text-xs text-brand-600 dark:text-brand-400 font-semibold">
-                            <i class="fa-solid fa-file-circle-check mr-1"></i> 심층 제시문 1개 · 질문 3개
-                        </span>
+                        <button onclick="printProblem(${item.id})" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-xs font-semibold rounded-lg transition flex items-center space-x-1 border border-slate-200 dark:border-slate-600">
+                            <i class="fa-solid fa-print text-brand-600 dark:text-brand-400"></i>
+                            <span>인쇄</span>
+                        </button>
                         <button onclick="loadExam(${item.id})" class="px-4 py-2 bg-slate-900 dark:bg-slate-100 hover:bg-brand-600 dark:hover:bg-brand-500 text-white dark:text-slate-900 dark:hover:text-white text-xs font-bold rounded-xl transition flex items-center space-x-1.5 shadow-sm">
                             <span>응시하기</span>
                             <i class="fa-solid fa-arrow-right"></i>
@@ -1087,6 +1130,133 @@
             if (modal) {
                 modal.classList.toggle('hidden');
             }
+        }
+
+        /* Function to build print layout: Page 1 (Passage & 3 Questions) + Page 2 (10-Min Scratchpad Worksheet) */
+        function printProblem(id) {
+            const exam = EXAM_SETS.find(item => item.id === id);
+            if (!exam) return;
+
+            const printSection = document.getElementById('printSection');
+            if (!printSection) return;
+
+            // Format Passage Paragraphs for Print
+            const passageFormatted = exam.passages[0].text.split('\n\n')
+                .map(p => `<p style="margin-bottom: 8px; text-align: justify; text-justify: inter-word;">${p}</p>`).join('');
+
+            // Format 3 Questions
+            const questionsFormatted = exam.questions.map((q, idx) => `
+                <div style="border: 1px solid #cbd5e1; background-color: #f8fafc; padding: 10px 14px; border-radius: 6px; margin-bottom: 8px; font-size: 13px; font-weight: 600; line-height: 1.4;">
+                    ${q}
+                </div>
+            `).join('');
+
+            printSection.innerHTML = `
+                <!-- PAGE 1: 제시문 및 면접 심층 질문 3개 -->
+                <div style="width: 100%; min-height: 270mm; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; position: relative;">
+                    <!-- Print Header -->
+                    <div style="border-bottom: 2px solid #000; padding-bottom: 8px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-end;">
+                        <div>
+                            <span style="font-size: 11px; font-weight: bold; color: #1e40af; letter-spacing: -0.2px;">2026-2027 대학 입시 면접 대비 심층 제시문</span>
+                            <h1 style="font-size: 17px; font-weight: 800; margin: 2px 0 0 0; color: #0f172a;">${exam.title}</h1>
+                        </div>
+                        <div style="text-align: right; font-size: 11px; color: #475569;">
+                            <div>영역: <strong>${exam.categoryLabel}</strong> (Set ${exam.id})</div>
+                            <div>시간 규격: <strong>제시문 분석 10분 / 면접 5분</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Notice Box -->
+                    <div style="border: 1px solid #e2e8f0; background-color: #f1f5f9; padding: 6px 12px; font-size: 11px; margin-bottom: 12px; border-radius: 4px; color: #334155;">
+                        ※ <strong>[수험생 유의사항]</strong> 본 제시문과 심층 질문 3개를 <strong>10분 동안</strong> 다각도로 분석한 후, 다음 장의 <strong>10분 구상 메모장</strong>에 답변 개요를 구조화하여 작성하십시오.
+                    </div>
+
+                    <!-- Passage Section -->
+                    <div style="margin-bottom: 14px;">
+                        <div style="font-size: 13px; font-weight: 800; color: #1e3a8a; border-bottom: 1.5px solid #2563eb; padding-bottom: 3px; margin-bottom: 8px;">
+                            ${exam.passages[0].label}
+                        </div>
+                        <div style="font-size: 12px; line-height: 1.65; color: #1e293b;">
+                            ${passageFormatted}
+                        </div>
+                    </div>
+
+                    <!-- Questions Section (Exactly 3) -->
+                    <div style="margin-top: 10px;">
+                        <div style="font-size: 13px; font-weight: 800; color: #1e3a8a; border-bottom: 1.5px solid #2563eb; padding-bottom: 3px; margin-bottom: 8px;">
+                            [면접 심층 질문 (총 3문항)]
+                        </div>
+                        ${questionsFormatted}
+                    </div>
+
+                    <!-- Footer Page Number -->
+                    <div style="position: absolute; bottom: 0; width: 100%; border-top: 1px solid #e2e8f0; pt: 4px; font-size: 10px; text-align: center; color: #94a3b8;">
+                        - 1 / 2 - (다음 장: 10분 구상 메모장)
+                    </div>
+                </div>
+
+                <!-- PAGE 2: 10분 구상 메모장 (Page Break Applied) -->
+                <div class="page-break" style="width: 100%; min-height: 270mm; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; position: relative; padding-top: 10px;">
+                    <!-- Print Page 2 Header -->
+                    <div style="border-bottom: 2px solid #000; padding-bottom: 8px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-end;">
+                        <div>
+                            <span style="font-size: 11px; font-weight: bold; color: #1e40af;">면접 Master 10 - 구상용 워크시트</span>
+                            <h2 style="font-size: 18px; font-weight: 800; margin: 2px 0 0 0; color: #0f172a;">10분 구상 메모장 (Set ${exam.id})</h2>
+                        </div>
+                        <!-- Student Info Table Header -->
+                        <div style="border: 1px solid #94a3b8; border-collapse: collapse;">
+                            <table style="font-size: 10px; text-align: center; border-collapse: collapse;">
+                                <tr>
+                                    <td style="border: 1px solid #94a3b8; padding: 3px 8px; background-color: #f8fafc; font-weight: bold;">지원 대학/학과</td>
+                                    <td style="border: 1px solid #94a3b8; width: 110px;"></td>
+                                    <td style="border: 1px solid #94a3b8; padding: 3px 8px; background-color: #f8fafc; font-weight: bold;">수험번호/성명</td>
+                                    <td style="border: 1px solid #94a3b8; width: 110px;"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Memo Grid 1: 제시문 핵심 요약 및 논지 구조 -->
+                    <div style="border: 1px solid #64748b; border-radius: 4px; margin-bottom: 12px; height: 160px; padding: 8px; position: relative;">
+                        <div style="font-size: 11px; font-weight: bold; color: #1e3a8a; margin-bottom: 4px;">
+                            ■ 제시문 핵심 요약 및 쟁점 구조화 (키워드/대립 가치)
+                        </div>
+                        <div style="width: 100%; height: 130px; background-image: linear-gradient(#f1f5f9 1px, transparent 1px); background-size: 100% 22px; line-height: 22px;"></div>
+                    </div>
+
+                    <!-- Memo Grid 2: 문항 1 답변 구상 -->
+                    <div style="border: 1px solid #64748b; border-radius: 4px; margin-bottom: 12px; height: 185px; padding: 8px; position: relative;">
+                        <div style="font-size: 11px; font-weight: bold; color: #1e3a8a; margin-bottom: 4px;">
+                            ■ (질문 1) 답변 개요 (주장 - 근거 - 문제점 요약)
+                        </div>
+                        <div style="width: 100%; height: 155px; background-image: linear-gradient(#f1f5f9 1px, transparent 1px); background-size: 100% 22px; line-height: 22px;"></div>
+                    </div>
+
+                    <!-- Memo Grid 3: 문항 2 답변 구상 -->
+                    <div style="border: 1px solid #64748b; border-radius: 4px; margin-bottom: 12px; height: 185px; padding: 8px; position: relative;">
+                        <div style="font-size: 11px; font-weight: bold; color: #1e3a8a; margin-bottom: 4px;">
+                            ■ (질문 2) 답변 개요 (기술적·제도적 대안 구체화)
+                        </div>
+                        <div style="width: 100%; height: 155px; background-image: linear-gradient(#f1f5f9 1px, transparent 1px); background-size: 100% 22px; line-height: 22px;"></div>
+                    </div>
+
+                    <!-- Memo Grid 4: 문항 3 답변 구상 -->
+                    <div style="border: 1px solid #64748b; border-radius: 4px; margin-bottom: 12px; height: 185px; padding: 8px; position: relative;">
+                        <div style="font-size: 11px; font-weight: bold; color: #1e3a8a; margin-bottom: 4px;">
+                            ■ (질문 3) 답변 개요 (지원자의 주체적 윤리관 및 실천 의지)
+                        </div>
+                        <div style="width: 100%; height: 155px; background-image: linear-gradient(#f1f5f9 1px, transparent 1px); background-size: 100% 22px; line-height: 22px;"></div>
+                    </div>
+
+                    <!-- Footer Page Number -->
+                    <div style="position: absolute; bottom: 0; width: 100%; border-top: 1px solid #e2e8f0; pt: 4px; font-size: 10px; text-align: center; color: #94a3b8;">
+                        - 2 / 2 - (면접 준비 구상 메모지)
+                    </div>
+                </div>
+            `;
+
+            // Trigger System Print Dialog
+            window.print();
         }
     </script>
 </body>
